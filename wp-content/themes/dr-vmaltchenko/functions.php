@@ -72,7 +72,7 @@ function get_picture($args = [])
     $is_asset = false;
 
     if (!empty($args['name'])) {
-        $img_src = get_template_directory_uri() . "/assets/images/" . $args['name'];
+        $img_src = get_template_directory_uri() . "/assets/img/" . $args['name'];
         $is_asset = true;
     }
 
@@ -87,13 +87,11 @@ function get_picture($args = [])
         // Check for WebP variant for theme assets
         $path_parts = pathinfo($args['name']);
         $webp_name = $path_parts['filename'] . '.webp';
-        // Note: checking file existence on every load might be expensive, 
-        // relying on convention that if using get_picture with name, webp exists.
-        // For now, output generic structure.
-        $webp_src = get_template_directory_uri() . "/assets/images/" . $webp_name;
+
+        // Assume WebP exists for theme assets to avoid expensive file checks
+        $webp_src = get_template_directory_uri() . "/assets/img/" . $webp_name;
 
         echo '<picture>';
-        // Assuming webp exists if requested via this function for assets
         echo '<source srcset="' . esc_url($webp_src) . '" type="image/webp">';
         echo '<img src="' . esc_url($img_src) . '" ' . $alt . ' ' . $class . ' ' . $loading . '>';
         echo '</picture>';
