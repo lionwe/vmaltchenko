@@ -1,15 +1,16 @@
 @use "../utils/mixins" as *;
 
 // Fonts
-$font-family-base: "Montserrat", sans-serif;
-$font-family-heading: "Inter", sans-serif;
-$font-family-involve: "Involve", sans-serif;
+$font-family-Montserrat: "Montserrat", sans-serif;
+$font-family-Inter: "Inter", sans-serif;
+$font-family-Involve: "Involve", sans-serif;
 
 // Font weights
 $fw-regular: 400;
 $fw-medium: 500;
 $fw-semibold: 600;
 $fw-bold: 700;
+$fw-800: 800;
 
 :root {
   // Gaps
@@ -18,6 +19,7 @@ $fw-bold: 700;
 
   // Colors
   --color-primary: #0B3A6E;
+  --color-primary-dark: #062241;
   --color-secondary: #4d6f95;
   --color-background: #fefefe;
   --color-white: #ffffff;
@@ -26,7 +28,7 @@ $fw-bold: 700;
   --color-gray-light: #F5F5F5;
   --color-gray-dark: #2E2E2E;
   --color-text: #000000;
+  --color-text-gray: #302F2F;
   --color-heading: #000000;
   --color-border: #EFEFEF;
-
 }

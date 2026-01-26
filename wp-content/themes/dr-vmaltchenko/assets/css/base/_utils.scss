@@ -20,6 +20,11 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   background-color: var(--color-background);
+  overflow-x: hidden;
+}
+
+html {
+  margin-top: 0 !important;
 }
 
 button {
