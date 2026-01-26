@@ -1,0 +1,95 @@
+[
+    {
+        "key": "group_hero",
+        "title": "Hero",
+        "fields": [
+            {
+                "key": "field_hero_tab_main",
+                "label": "Основне",
+                "name": "",
+                "type": "tab"
+            },
+            {
+                "key": "field_hero_background",
+                "label": "Фонове зображення",
+                "name": "hero_background",
+                "type": "image",
+                "return_format": "url",
+                "preview_size": "medium",
+                "library": "all",
+                "instructions": "Оберіть зображення у форматі WebP"
+            },
+            {
+                "key": "field_hero_badges",
+                "label": "Бейджики",
+                "name": "hero_badges",
+                "type": "repeater",
+                "layout": "table",
+                "sub_fields": [
+                    {
+                        "key": "field_hero_badge_text",
+                        "label": "Текст",
+                        "name": "text",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "key": "field_hero_content",
+                "label": "Контент",
+                "name": "hero_content",
+                "type": "wysiwyg",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0
+            },
+            {
+                "key": "field_hero_tab_patients",
+                "label": "Пацієнти",
+                "name": "",
+                "type": "tab"
+            },
+            {
+                "key": "field_hero_patients_avatars",
+                "label": "Аватарки пацієнтів",
+                "name": "hero_patients_avatars",
+                "type": "image",
+                "return_format": "url",
+                "preview_size": "medium",
+                "instructions": "Оберіть зображення у форматі WebP"
+            },
+            {
+                "key": "field_hero_patients_text",
+                "label": "Текст пацієнтів",
+                "name": "hero_patients_text",
+                "type": "text",
+                "default_value": "+ 100 задоволених пацієнтів",
+                "instructions": "Наприклад: + 100 задоволених пацієнтів"
+            },
+            {
+                "key": "field_hero_tab_doctor",
+                "label": "Лікар",
+                "name": "",
+                "type": "tab"
+            },
+            {
+                "key": "field_hero_doctor_image",
+                "label": "Зображення лікаря",
+                "name": "hero_doctor_image",
+                "type": "image",
+                "return_format": "url",
+                "preview_size": "medium",
+                "instructions": "Оберіть зображення у форматі WebP"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "templates/home.php"
+                }
+            ]
+        ]
+    }
+]

@@ -1,4 +1,7 @@
 import "./utils";
+import "./utils/smooth-scroll";
+
+import "./components/main";
 
 if (document.querySelector(".swiper")) {
   import("./swipers/main").catch((error) => {

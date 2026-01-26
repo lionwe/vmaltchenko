@@ -15,14 +15,53 @@
 
 <body>
 
-		<header class="header">
-			<div class="container">
-				<nav class="main-nav">
 
-					<?php the_custom_logo(); ?>
-					<!-- 
-								<?php get_template_part('templates/navigation', null, array('location' => 'menu-header')); ?> -->
+	<header class="header">
+		<div class="container header__outer-container">
+			<div class="header__logo">
+				<?php if (has_custom_logo()) {
+					the_custom_logo();
+				} else {
+					echo '<a href="' . esc_url(home_url('/')) . '">' . get_bloginfo('name') . '</a>';
+				} ?>
+			</div>
 
+			<div class="header__menu-container">
+				<nav class="header__nav">
+					<?php
+					$menu_items = [
+						'#about' => 'Про мене',
+						'#services' => 'Послуги',
+						'#when-to-visit' => 'Коли варто звернутись',
+						'#methods' => 'Методи лікування',
+						'#results' => 'Результати',
+						'#faq' => 'Відповіді на питання',
+					];
+					?>
+					<ul class="header__menu">
+						<?php foreach ($menu_items as $link => $label):
+							$len = mb_strlen($label);
+							$padding_class = ($len < 12) ? 'header__menu-link--wide' : 'header__menu-link--narrow';
+							?>
+							<li class="header__menu-item">
+								<a href="<?php echo esc_url($link); ?>"
+									class="header__menu-link <?php echo $padding_class; ?>">
+									<?php echo esc_html($label); ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
 				</nav>
 			</div>
-		</header>
+
+			<div class="header__actions">
+				<?php get_template_part('templates/button', null, [
+					'text' => 'Записатись на консультацію',
+					'link' => '#contacts',
+					'type' => 'primary',
+					'icon_name' => 'consultation_arrow',
+					'class' => 'header__button'
+				]); ?>
+			</div>
+		</div>
+	</header>

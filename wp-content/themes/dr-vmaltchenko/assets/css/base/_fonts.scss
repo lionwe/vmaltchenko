@@ -75,7 +75,7 @@
 
 h1,
 .h1 {
-    @include typography($font-family-base, $fw-regular, (32px, 90px), 1);
+    @include typography($font-family-Involve, $fw-regular, (32px, 95px), 1);
 
     strong {
         font-weight: $fw-bold;
@@ -84,7 +84,7 @@ h1,
 
 h2,
 .h2 {
-    @include typography($font-family-heading, $fw-medium, (24px, 42px), 32px);
+    @include typography($font-family-Involve, $fw-medium, (24px, 42px), 32px);
 
     &.bold {
         font-weight: $fw-bold;
@@ -93,24 +93,24 @@ h2,
 
 h3,
 .h3 {
-    @include typography($font-family-heading, $fw-medium, (18px, 22px), 28px);
+    @include typography($font-family-Involve, $fw-medium, (18px, 22px), 28px);
 }
 
 h4,
 .h4 {
-    @include typography($font-family-heading, $fw-bold, 18px, 26px);
+    @include typography($font-family-Involve, $fw-bold, 18px, 26px);
 }
 
 // --- Body Text (Montserrat mostly) ---
 
 // 20px - SemiBold
 .text-xl {
-    @include typography($font-family-base, $fw-semibold, 20px, 24px);
+    @include typography($font-family-Involve, $fw-semibold, 20px, 24px);
 }
 
 // 18px - Regular (default) / SemiBold
 .text-lg {
-    @include typography($font-family-base, $fw-regular, 18px, 24px);
+    @include typography($font-family-Involve, $fw-regular, 18px, 24px);
 
     &.semibold {
         font-weight: $fw-semibold;
@@ -119,21 +119,21 @@ h4,
 
 // 16px - Medium (Accent)
 .text-md-accent {
-    @include typography($font-family-heading, $fw-medium, 16px, 24px);
+    @include typography($font-family-Involve, $fw-medium, 16px, 24px);
 }
 
 // 15px - Regular (Standard Body)
 p,
 .text-md {
-    @include typography($font-family-base, $fw-regular, 15px, 24px);
+    @include typography($font-family-Involve, $fw-regular, 15px, 24px);
 }
 
 // 14px - Medium (Small Accent)
 .text-sm-accent {
-    @include typography($font-family-heading, $fw-medium, 14px, 24px);
+    @include typography($font-family-Involve, $fw-medium, 14px, 24px);
 }
 
 // 12px - Regular (Caption)
 .text-xs {
-    @include typography($font-family-base, $fw-regular, 12px, 24px);
+    @include typography($font-family-Involve, $fw-regular, 12px, 24px);
 }
