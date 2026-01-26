@@ -1,0 +1,122 @@
+[
+    {
+        "key": "group_when_to_seek_help",
+        "title": "Коли варто звернутись",
+        "fields": [
+            {
+                "key": "field_wtsh_badge",
+                "label": "Бейджик",
+                "name": "badge",
+                "type": "text",
+                "instructions": "Введіть текст для бейджика (маленький надпис зверху)",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_wtsh_title",
+                "label": "Заголовок",
+                "name": "title",
+                "type": "text",
+                "instructions": "Основний заголовок секції",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_wtsh_cards",
+                "label": "Картки",
+                "name": "cards",
+                "type": "repeater",
+                "instructions": "Додайте до 9 карток з описом симптомів",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 9,
+                "layout": "row",
+                "button_label": "Додати картку",
+                "sub_fields": [
+                    {
+                        "key": "field_wtsh_card_content",
+                        "label": "Вміст картки",
+                        "name": "card_content",
+                        "type": "wysiwyg",
+                        "instructions": "Введіть заголовок (H3) та опис. Використовуйте редактор для форматування.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 0,
+                        "delay": 0
+                    }
+                ]
+            },
+            {
+                "key": "field_wtsh_bottom_description",
+                "label": "Нижній опис",
+                "name": "bottom_description",
+                "type": "wysiwyg",
+                "instructions": "Текст після карток",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "templates/home.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]
