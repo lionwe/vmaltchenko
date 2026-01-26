@@ -2,7 +2,6 @@
 @use '../../utils/mixins' as *;
 
 .about-me {
-    padding-block: convert-to-rem(100px);
 
     &__wrapper {
         display: flex;
