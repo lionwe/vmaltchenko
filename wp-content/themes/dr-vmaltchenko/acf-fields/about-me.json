@@ -1,0 +1,77 @@
+[
+    {
+        "key": "group_about_me",
+        "title": "About Me",
+        "fields": [
+            {
+                "key": "field_about_image",
+                "label": "Зображення лікаря",
+                "name": "about_image",
+                "type": "image",
+                "return_format": "url",
+                "preview_size": "medium",
+                "library": "all",
+                "instructions": "Оберіть зображення у форматі WebP"
+            },
+            {
+                "key": "field_about_badge",
+                "label": "Бейджик",
+                "name": "about_badge",
+                "type": "text",
+                "default_value": "Хто я?"
+            },
+            {
+                "key": "field_about_main_content",
+                "label": "Головний контент",
+                "name": "about_main_content",
+                "type": "wysiwyg",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "instructions": "Заголовок (H2) та опис"
+            },
+            {
+                "key": "field_about_cards",
+                "label": "Карточки досвіду",
+                "name": "about_cards",
+                "type": "repeater",
+                "layout": "table",
+                "max": 3,
+                "sub_fields": [
+                    {
+                        "key": "field_about_card_badge",
+                        "label": "Бейджик картки",
+                        "name": "card_badge",
+                        "type": "text",
+                        "default_value": "ДОСВІДУ"
+                    },
+                    {
+                        "key": "field_about_card_value",
+                        "label": "Значення картки",
+                        "name": "card_value",
+                        "type": "text",
+                        "default_value": "+10 років"
+                    }
+                ]
+            },
+            {
+                "key": "field_about_grid_text",
+                "label": "Текст в гріді (4-й елемент)",
+                "name": "about_grid_text",
+                "type": "wysiwyg",
+                "tabs": "visual",
+                "toolbar": "basic",
+                "media_upload": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "templates/home.php"
+                }
+            ]
+        ]
+    }
+]
