@@ -1,0 +1,32 @@
+@use "../utils/mixins" as *;
+
+// Fonts
+$font-family-base: "Montserrat", sans-serif;
+$font-family-heading: "Inter", sans-serif;
+$font-family-involve: "Involve", sans-serif;
+
+// Font weights
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+:root {
+  // Gaps
+  --_section-gap: #{Clamp(convert-to-rem(100px), convert-to-rem(110px))};
+  --_section-offset: #{Clamp(convert-to-rem(10px), convert-to-rem(50px))};
+
+  // Colors
+  --color-primary: #0B3A6E;
+  --color-secondary: #4d6f95;
+  --color-background: #fefefe;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray: #2D2D2D;
+  --color-gray-light: #F5F5F5;
+  --color-gray-dark: #2E2E2E;
+  --color-text: #000000;
+  --color-heading: #000000;
+  --color-border: #EFEFEF;
+
+}
