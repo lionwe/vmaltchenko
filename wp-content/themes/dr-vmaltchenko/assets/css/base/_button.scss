@@ -11,10 +11,6 @@
     transition: opacity 0.3s ease;
     width: fit-content;
 
-    @include hover {
-        opacity: 0.9;
-    }
-
     // Element styling
     &__text {
         @include typography($font-family-Involve, $fw-medium, 17.41px, 1, -0.01em);
@@ -24,6 +20,7 @@
         justify-content: center;
         height: 100%;
         vertical-align: middle;
+        transition: background-color 0.3s ease;
     }
 
     &__icon-wrapper {
@@ -31,6 +28,7 @@
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
+        transition: background-color 0.3s ease;
 
         svg {
             width: convert-to-rem(12px);
@@ -44,7 +42,6 @@
     &--primary {
         position: relative;
         height: convert-to-rem(64px);
-
 
         .btn__text {
             background-color: var(--color-primary);
@@ -72,6 +69,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        @include hover {
+            .btn__text {
+                background-color: var(--color-primary-dark);
+            }
+
+            .btn__icon-wrapper {
+                background-color: var(--color-primary-dark);
+            }
         }
     }
 }

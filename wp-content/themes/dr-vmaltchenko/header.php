@@ -62,6 +62,10 @@
 					'icon_name' => 'consultation_arrow',
 					'class' => 'header__button'
 				]); ?>
+
+				<button class="header__burger" aria-label="Open Menu">
+					<?php echo file_get_contents(get_template_directory() . '/assets/img/svg/burger.svg'); ?>
+				</button>
 			</div>
 		</div>
 	</header>

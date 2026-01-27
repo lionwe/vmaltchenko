@@ -9,6 +9,9 @@
         0 convert-to-rem(4px) convert-to-rem(40px) 0 rgba(0, 0, 0, 0.25);
     border-radius: 0 0 convert-to-rem(20px) convert-to-rem(20px);
 
+    @include mobile {
+        border-radius: 0;
+    }
 
     &__background {
         position: absolute;
@@ -34,7 +37,11 @@
 
         @include mobile {
             flex-direction: column;
-            padding-top: convert-to-rem(80px);
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: convert-to-rem(120px);
+            min-height: auto;
+            padding-bottom: 0;
         }
     }
 
@@ -45,6 +52,7 @@
 
         @include mobile {
             max-width: 100%;
+            width: 100%;
         }
     }
 
@@ -67,7 +75,6 @@
         width: fit-content;
         height: auto;
 
-        // Dot
         &::before {
             content: '';
             display: block;
@@ -78,15 +85,13 @@
             margin-right: convert-to-rem(8px);
         }
 
-        // Text
-        @include typography($font-family-Inter, 400, (16px, 16px), (16px, 16px));
+        @include typography($font-family-Inter, 400, (14px, 16px), 1);
         color: var(--color-black);
     }
 
     &__content {
         margin-bottom: convert-to-rem(8px);
 
-        // Default WP output fallback
         h1 {
             @include typography($font-family-Involve, 400, (60px, 95px), (46px, 80px));
             color: var(--color-black);
@@ -124,10 +129,22 @@
                 grid-area: title1;
                 margin-bottom: convert-to-rem(10px);
                 width: 100%;
+
+                @include mobile {
+                    order: 1;
+                    line-height: 1;
+                    margin-bottom: convert-to-rem(9px);
+                }
             }
 
             &--2 {
                 grid-area: title2;
+
+                @include mobile {
+                    order: 2;
+                    line-height: 1;
+                    margin-bottom: convert-to-rem(10px);
+                }
             }
         }
 
@@ -145,7 +162,8 @@
             @include mobile {
                 max-width: 100%;
                 margin-right: 0;
-                margin-bottom: convert-to-rem(10px);
+                margin-bottom: 0;
+                order: 3;
             }
         }
     }
@@ -157,8 +175,10 @@
 
         @include mobile {
             flex-direction: column;
-            align-items: flex-start;
-            gap: convert-to-rem(20px);
+            align-items: center;
+            gap: 0;
+            margin-top: convert-to-rem(5px);
+            margin-bottom: convert-to-rem(40px);
         }
     }
 
@@ -168,6 +188,7 @@
         @include mobile {
             margin-right: 0;
             width: 100%;
+            order: 2;
         }
     }
 
@@ -175,6 +196,12 @@
         display: flex;
         align-items: center;
         gap: convert-to-rem(7px);
+
+        @include mobile {
+            order: 1;
+            width: 100%;
+            margin-bottom: convert-to-rem(13px);
+        }
     }
 
     &__patients-avatars {
@@ -208,12 +235,11 @@
         pointer-events: none;
 
         @include mobile {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            margin-top: convert-to-rem(20px);
-            right: auto;
-            bottom: auto;
+            position: static;
+            width: 135%;
+            max-width: none;
+            margin-top: convert-to-rem(-165.2px);
+            align-self: center;
         }
 
         .hero__doctor-img {
