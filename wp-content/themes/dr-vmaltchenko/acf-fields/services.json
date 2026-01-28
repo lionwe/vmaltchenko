@@ -1,0 +1,57 @@
+[
+    {
+        "key": "group_services_section",
+        "title": "Home - Services Section",
+        "fields": [
+            {
+                "key": "field_services_badge",
+                "label": "Badge",
+                "name": "services_badge",
+                "type": "text",
+                "default_value": "Наші послуги"
+            },
+            {
+                "key": "field_services_title",
+                "label": "Title & Description",
+                "name": "services_title",
+                "type": "wysiwyg",
+                "tabs": "visual",
+                "toolbar": "full",
+                "media_upload": 0,
+                "default_value": "<h2>Послуги</h2>"
+            },
+            {
+                "key": "field_services_selected",
+                "label": "Select Services",
+                "name": "services_selected",
+                "type": "relationship",
+                "post_type": [
+                    "services"
+                ],
+                "filters": [
+                    "search"
+                ],
+                "min": 0,
+                "max": 0,
+                "return_format": "id"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "pages/home.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

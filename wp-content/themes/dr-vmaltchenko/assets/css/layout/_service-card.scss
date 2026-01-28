@@ -1,0 +1,72 @@
+@use "../utils/mixins" as *;
+@use "../base/variables" as *;
+
+.service-card {
+    position: relative;
+    max-width: convert-to-rem(466px);
+    min-height: convert-to-rem(283px);
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: convert-to-rem(19px) convert-to-rem(18px);
+
+    border-radius: convert-to-rem(20px);
+
+
+    border: 1px solid rgba(52, 145, 200, 0.3);
+    overflow: hidden;
+    z-index: 1;
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        img,
+        picture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__decor {
+        position: absolute;
+        top: convert-to-rem(10px);
+        left: convert-to-rem(10px);
+        width: convert-to-rem(45px);
+        height: auto;
+    }
+
+    &__content {
+        text-align: center;
+        width: 100%;
+        max-width: convert-to-rem(348px);
+    }
+
+    &__title {
+        @include typography($font-family-Inter, $fw-regular, 28px, 1);
+
+        margin-bottom: convert-to-rem(15px);
+        color: var(--color-text);
+    }
+
+    &__description {
+        @include typography($font-family-Involve, $fw-regular, 16px, 20px);
+
+        color: var(--color-text);
+
+        p {
+            @include typography($font-family-Involve, $fw-regular, 16px, 20px);
+            margin: 0;
+        }
+    }
+}

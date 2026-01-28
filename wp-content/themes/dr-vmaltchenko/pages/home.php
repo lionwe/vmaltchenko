@@ -10,6 +10,7 @@ Template Name: Home
     <?php get_template_part('sections/home/hero'); ?>
     <?php get_template_part('sections/home/about-me'); ?>
     <?php get_template_part('sections/home/when-to-seek-help'); ?>
+    <?php get_template_part('sections/home/services'); ?>
 </main>
 
 <?php get_footer(); ?>
