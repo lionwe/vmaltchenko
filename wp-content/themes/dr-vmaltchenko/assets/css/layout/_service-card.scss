@@ -3,7 +3,12 @@
 
 .service-card {
     position: relative;
-    max-width: convert-to-rem(466px);
+    max-width: 100%;
+
+    @include desktop {
+        max-width: convert-to-rem(466px);
+    }
+
     min-height: convert-to-rem(283px);
     width: 100%;
 

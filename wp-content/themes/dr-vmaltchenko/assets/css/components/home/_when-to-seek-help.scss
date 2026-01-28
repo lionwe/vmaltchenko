@@ -3,6 +3,7 @@
 
 .when-to-seek-help {
     position: relative;
+    overflow-x: clip;
 
     &__wrapper {
         position: relative;
@@ -101,9 +102,10 @@
     // Manual Swiper Styles for Mobile 
     &__swiper {
         @include mobile {
-            overflow: visible;
+            overflow: hidden;
             list-style: none;
-            padding: 0;
+            padding: convert-to-rem(50px);
+            margin: convert-to-rem(-50px);
             z-index: 1;
             display: block;
         }
