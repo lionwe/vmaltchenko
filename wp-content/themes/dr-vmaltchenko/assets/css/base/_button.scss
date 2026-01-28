@@ -81,4 +81,81 @@
             }
         }
     }
+
+    &--slider-nav {
+        width: convert-to-rem(75.4px);
+        height: convert-to-rem(53px);
+        border-radius: convert-to-rem(34.5px);
+        justify-content: center;
+
+        // Default (Active) State
+        background-color: var(--color-gray);
+        border: 1px solid var(--color-gray);
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+        user-select: none;
+
+        .btn__icon-wrapper {
+            svg {
+                width: convert-to-rem(12px);
+                height: convert-to-rem(8px);
+                fill: var(--color-white);
+                stroke: var(--color-white);
+            }
+        }
+
+        @include hover {
+            background-color: var(--color-gray);
+            border-color: var(--color-gray);
+
+            .btn__icon-wrapper {
+                svg {
+                    fill: var(--color-white);
+                    stroke: var(--color-white);
+                }
+            }
+        }
+
+        &.swiper-button-disabled,
+        .swiper-button-disabled & {
+            opacity: 1;
+            cursor: default;
+            pointer-events: none;
+
+            // Inactive State
+            background-color: var(--color-gray-light);
+            border-color: var(--color-white);
+
+            .btn__icon-wrapper {
+                svg {
+                    fill: var(--color-gray);
+                    stroke: var(--color-gray);
+                }
+            }
+        }
+    }
+}
+
+.swiper-pagination {
+    position: static;
+    margin-top: convert-to-rem(14px);
+    display: flex;
+    justify-content: center;
+    gap: convert-to-rem(3px);
+
+    &-bullet {
+        width: convert-to-rem(6px);
+        height: convert-to-rem(6px);
+        background-color: var(--color-gray-medium); // Inactive
+        opacity: 1;
+        margin: 0 !important;
+
+        display: block;
+        border-radius: 50%;
+
+
+        &-active {
+            background-color: var(--color-primary); // Active
+        }
+    }
 }
