@@ -6,24 +6,31 @@
 .services {
     &__wrapper {
         display: flex;
-        flex-direction: column;
-        gap: convert-to-rem(40px);
+        flex-direction: row;
+        align-items: flex-start;
+        gap: convert-to-rem(65px);
 
-        @include desktop {
-            flex-direction: row;
-            align-items: flex-start;
-            gap: convert-to-rem(65px);
+        @include mobile {
+            flex-direction: column;
+            gap: convert-to-rem(40px);
         }
     }
 
     &__info {
-        width: 100%;
+        width: 230px;
+        flex-shrink: 0;
+        position: sticky;
+        top: convert-to-rem(100px);
+        align-items: flex-start;
+        text-align: left;
 
-        @include desktop {
-            width: 230px;
-            flex-shrink: 0;
-            position: sticky;
-            top: convert-to-rem(100px);
+        @include mobile {
+            width: 100%;
+            position: static;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
     }
 
@@ -47,6 +54,10 @@
             @include typography($font-family-Involve, $fw-regular, 50px, 1);
             color: var(--color-heading);
             margin-bottom: convert-to-rem(20px);
+
+            @include mobile {
+                font-size: convert-to-rem(40px);
+            }
         }
 
         p {
@@ -56,12 +67,13 @@
     }
 
     &__slider {
-        width: 100%;
+        flex: 1;
+        width: auto;
         min-width: 0;
 
-        @include desktop {
-            flex: 1;
-            width: auto;
+        @include mobile {
+            width: 100%;
+            flex: none;
         }
     }
 
@@ -73,6 +85,7 @@
         list-style: none;
         padding: 0;
         z-index: 1;
+        display: block;
     }
 
     .swiper-wrapper {
@@ -92,6 +105,10 @@
         flex-shrink: 0;
         position: relative;
         transition-property: transform;
+
+        @include mobile {
+            width: 100%;
+        }
     }
 
     // Controls container
@@ -102,12 +119,16 @@
         position: relative;
         width: 100%;
         max-width: convert-to-rem(385px);
+
+        @include mobile {
+            justify-content: center;
+            max-width: 100%;
+        }
     }
 
     &__controls-inner {
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
     &__nav {

@@ -6,8 +6,8 @@ const serviceSwiperContainer = document.querySelector(".services-swiper");
 if (serviceSwiperContainer) {
     const swiper = new Swiper(serviceSwiperContainer, {
         modules: [Navigation, Pagination],
-        slidesPerView: "auto",
-        spaceBetween: 29,
+        slidesPerView: 1, 
+        spaceBetween: 20,
         grabCursor: true,
         navigation: {
             nextEl: ".services-next",
@@ -19,9 +19,11 @@ if (serviceSwiperContainer) {
         },
         breakpoints: {
             768: {
-                spaceBetween: 29,
+                slidesPerView: "auto", 
+                spaceBetween: 30,
             },
             1200: {
+                slidesPerView: "auto",
                 spaceBetween: 29,
             }
         }
