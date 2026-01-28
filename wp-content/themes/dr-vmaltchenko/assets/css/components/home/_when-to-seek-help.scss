@@ -2,6 +2,8 @@
 @use "../../utils/mixins" as *;
 
 .when-to-seek-help {
+    position: relative;
+
     &__wrapper {
         position: relative;
         overflow: hidden;
@@ -15,7 +17,12 @@
         }
 
         @include mobile {
-            padding: convert-to-rem(10px);
+            padding: 0;
+            overflow: visible;
+            border-radius: convert-to-rem(20px);
+            background-color: transparent;
+            padding-top: convert-to-rem(50px);
+            padding-bottom: convert-to-rem(60px);
         }
     }
 
@@ -32,6 +39,32 @@
             height: 100%;
             object-fit: cover;
         }
+
+        &--desktop {
+            display: block;
+
+            @include mobile {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            display: none;
+
+            @include mobile {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+
+                img {
+                    border-radius: convert-to-rem(20px);
+                }
+            }
+        }
     }
 
     &__badge {
@@ -43,23 +76,40 @@
         margin: 0 auto convert-to-rem(10px) auto;
         background-color: var(--color-white);
 
-        @include typography($font-family-Involve, $fw-regular, 14px);
-        line-height: 100%;
+        @include typography($font-family-Involve, $fw-regular, 14px, 1);
     }
 
     &__title {
-        @include typography($font-family-Involve, $fw-regular, 50px);
-        line-height: convert-to-rem(50px);
+        @include typography($font-family-Involve, $fw-regular, 50px, 50px);
         text-align: center;
         margin-bottom: convert-to-rem(67px);
 
         @include mobile {
-            font-size: convert-to-rem(32px);
-            line-height: 1.2;
-            margin-bottom: convert-to-rem(30px);
+            margin-bottom: convert-to-rem(14px);
         }
     }
 
+    &__slider-container {
+        @include mobile {
+            width: 100%;
+            overflow: visible;
+        }
+    }
+
+
+
+    // Manual Swiper Styles for Mobile 
+    &__swiper {
+        @include mobile {
+            overflow: visible;
+            list-style: none;
+            padding: 0;
+            z-index: 1;
+            display: block;
+        }
+    }
+
+    // Grid acts as Swiper Wrapper on mobile
     &__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -67,16 +117,29 @@
         margin-bottom: convert-to-rem(30px);
 
         @include mobile {
-            grid-template-columns: 1fr;
+            display: flex;
+            gap: 0;
+            margin-bottom: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: content-box;
+            transition-property: transform;
         }
     }
 
     &__card-container {
         display: flex;
         gap: convert-to-rem(7.5px);
+
+        @include mobile {
+            display: block;
+            height: auto;
+            width: 100%;
+            flex-shrink: 0;
+        }
     }
 
-    &__card-counter {
+    &__card-counter--desktop {
         flex-shrink: 0;
         width: fit-content;
         height: auto;
@@ -86,8 +149,31 @@
         color: var(--color-white);
         align-self: flex-start;
 
-        @include typography($font-family-Involve, $fw-regular, 18px);
-        line-height: 100%;
+        @include typography($font-family-Involve, $fw-regular, 18px, 1);
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__card-counter--mobile {
+        display: none;
+
+        @include mobile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            background-color: var(--color-primary);
+            border-radius: convert-to-rem(10px);
+            padding: convert-to-rem(10px);
+            width: fit-content;
+            height: auto;
+
+            @include typography($font-family-Involve, $fw-regular, 18px, 1);
+            margin-bottom: convert-to-rem(9px);
+            margin-right: 0;
+        }
     }
 
     &__card {
@@ -99,6 +185,11 @@
         width: auto;
         display: flex;
         flex-direction: column;
+
+        @include mobile {
+            box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.25);
+            padding: convert-to-rem(18px) convert-to-rem(8px) convert-to-rem(11px) convert-to-rem(12px);
+        }
     }
 
     &__card-content {
@@ -108,15 +199,33 @@
         flex-grow: 1;
 
         h3 {
-            @include typography($font-family-Inter, $fw-medium, 25px);
-            line-height: 100%;
+            @include typography($font-family-Inter, $fw-medium, (23px, 25px), 1);
             margin: 0;
         }
 
         p {
-            @include typography($font-family-Involve, $fw-regular, 16px);
-            line-height: convert-to-rem(20px);
+            @include typography($font-family-Involve, $fw-regular, 16px, 20px);
             margin: 0;
+        }
+
+        // Mobile Layout overrides for content
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+            &>h3 {
+                margin-bottom: auto;
+            }
+        }
+    }
+
+    &__card-header-mobile {
+        display: contents;
+
+        @include mobile {
+            display: block;
         }
     }
 
@@ -128,18 +237,18 @@
         gap: convert-to-rem(20px);
 
         @include mobile {
-            flex-direction: column;
-            gap: convert-to-rem(30px);
+            display: none;
         }
     }
 
     &__description-text {
-        max-width: convert-to-rem(291px);
+        max-width: convert-to-rem(350px);
         text-align: left;
-        @include typography($font-family-Involve, $fw-regular, 18px);
 
-        @include mobile {
-            text-align: center;
+        &,
+        p {
+            @include typography($font-family-Involve, $fw-regular, 18px, 20px);
+            margin: 0;
         }
     }
 
@@ -147,11 +256,22 @@
         width: convert-to-rem(455px);
         height: 1px;
         background-color: var(--color-border-separator);
+    }
+
+    &__controls {
+        display: none;
 
         @include mobile {
-            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: convert-to-rem(20px);
         }
     }
 
-
+    &__nav {
+        display: flex;
+        gap: convert-to-rem(10px);
+        padding-bottom: 0.875rem;
+    }
 }
