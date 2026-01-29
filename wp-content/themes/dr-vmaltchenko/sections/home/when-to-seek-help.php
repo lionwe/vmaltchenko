@@ -5,7 +5,7 @@ $cards = get_field('cards');
 $bottom_description = get_field('bottom_description');
 ?>
 
-<section class="when-to-seek-help">
+<section id="when-to-seek-help" class="when-to-seek-help">
     <div class="when-to-seek-help__bg when-to-seek-help__bg--mobile">
         <?php echo get_picture([
             'name' => 'bg_when-to-seek-help.webp',

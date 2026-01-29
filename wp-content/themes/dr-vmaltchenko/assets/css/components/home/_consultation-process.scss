@@ -1,0 +1,121 @@
+@use "../../base/variables" as *;
+@use "../../utils/mixins" as *;
+
+.consultation-process {
+    &__wrapper {
+        display: flex;
+        gap: convert-to-rem(20px);
+
+        @include mobile {
+            flex-direction: column;
+            gap: convert-to-rem(10px);
+        }
+    }
+
+    &__info,
+    &__cards {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__info {
+        align-items: flex-start;
+    }
+
+    &__badge {
+        width: fit-content;
+        height: auto;
+        border-radius: convert-to-rem(10px);
+        padding: convert-to-rem(10px);
+        background: linear-gradient(90deg, #E8F2F7 0%, #FFFFFF 100%);
+        margin-bottom: convert-to-rem(14px);
+
+        // Typography
+        @include typography($font-family-Involve, $fw-regular, 14px, 1);
+        color: var(--color-text);
+    }
+
+    &__title {
+        margin-bottom: convert-to-rem(19px);
+        max-width: convert-to-rem(547px);
+
+        h2 {
+            @include typography($font-family-Involve, $fw-regular, (50px, 60px), 50px);
+            letter-spacing: 0%;
+        }
+
+        @include mobile {
+            margin-bottom: 0;
+        }
+    }
+
+    &__button {
+        @include mobile {
+            display: none;
+        }
+
+        .btn__text {
+            padding-left: convert-to-rem(73px);
+            padding-right: convert-to-rem(73px);
+        }
+    }
+
+    &__cards {
+        gap: convert-to-rem(20px);
+    }
+
+    &__card {
+        width: 100%;
+        height: auto;
+        border-radius: convert-to-rem(20px);
+        border: 1px solid var(--color-border-light-blue);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 49.04%, rgba(199, 228, 243, 0.25) 100%);
+
+        padding: convert-to-rem(21px) convert-to-rem(95px) convert-to-rem(42px) convert-to-rem(29px);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: convert-to-rem(30px);
+
+        @include mobile {
+            padding: convert-to-rem(21px) convert-to-rem(10px) convert-to-rem(10px) convert-to-rem(29px);
+        }
+    }
+
+    &__card-icon {
+        width: convert-to-rem(50px);
+        height: convert-to-rem(44px);
+        border-radius: convert-to-rem(10px);
+        padding: convert-to-rem(10px);
+        background: #0B3A6E;
+        box-shadow: 0px 4px 50px 0px #3491C866;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: convert-to-rem(29px);
+            height: convert-to-rem(23px);
+            object-fit: contain;
+        }
+    }
+
+    &__card-content {
+        h3 {
+            @include typography($font-family-Involve, $fw-regular, 24px, 30px);
+            letter-spacing: 0%;
+        }
+
+        p {
+            @include typography($font-family-Involve, $fw-regular, 16px, (25px, 30px));
+            letter-spacing: 0%;
+        }
+    }
+}
