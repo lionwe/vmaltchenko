@@ -1,0 +1,73 @@
+[
+    {
+        "key": "group_cta_settings",
+        "title": "CTA Section",
+        "fields": [
+            {
+                "key": "field_cta_container_bg",
+                "label": "Background Image",
+                "name": "cta_container_bg",
+                "type": "image",
+                "instructions": "Image for the main wrapper background",
+                "required": 0,
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all"
+            },
+            {
+                "key": "field_cta_content",
+                "label": "Content",
+                "name": "cta_content",
+                "type": "wysiwyg",
+                "instructions": "Title and description",
+                "required": 0,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0
+            },
+            {
+                "key": "field_cta_form_shortcode",
+                "label": "Form Shortcode",
+                "name": "cta_form_shortcode",
+                "type": "text",
+                "instructions": "Shortcode for the form (e.g., [contact-form-7 ...])",
+                "required": 0
+            },
+            {
+                "key": "field_cta_right_image",
+                "label": "Right Image",
+                "name": "cta_right_image",
+                "type": "image",
+                "instructions": "Image displayed in the right container",
+                "required": 0,
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "templates/home.php"
+                }
+            ],
+            [
+                {
+                    "param": "page_type",
+                    "operator": "==",
+                    "value": "front_page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

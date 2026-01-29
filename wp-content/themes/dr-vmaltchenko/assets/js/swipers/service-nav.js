@@ -20,9 +20,9 @@ if (serviceSwiperContainer) {
         breakpoints: {
             768: {
                 slidesPerView: "auto", 
-                spaceBetween: 30,
+                spaceBetween: 20,
             },
-            1200: {
+            992: { 
                 slidesPerView: "auto",
                 spaceBetween: 29,
             }
