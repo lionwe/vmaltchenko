@@ -11,6 +11,7 @@ Template Name: Home
     <?php get_template_part('sections/home/about-me'); ?>
     <?php get_template_part('sections/home/when-to-seek-help'); ?>
     <?php get_template_part('sections/home/services'); ?>
+    <?php get_template_part('sections/home/cta'); ?>
 </main>
 
 <?php get_footer(); ?>

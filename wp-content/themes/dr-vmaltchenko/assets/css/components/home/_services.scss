@@ -19,14 +19,11 @@
     &__info {
         width: 230px;
         flex-shrink: 0;
-        position: sticky;
-        top: convert-to-rem(100px);
         align-items: flex-start;
         text-align: left;
 
         @include mobile {
             width: 100%;
-            position: static;
             display: flex;
             flex-direction: column;
             align-items: center;

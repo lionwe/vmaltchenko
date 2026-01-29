@@ -1,17 +1,9 @@
 import "./utils";
 import "./utils/smooth-scroll";
-
 import "./components/main";
 
-if (document.querySelector(".swiper")) {
-  import("./swipers/main").catch((error) => {
-    console.error("Failed to load Swiper module:", error);
-  });
-}
-if (document.querySelector(".backdrop")) {
-  import("./popups/main").catch((error) => {
-    console.error("Failed to load Popups module:", error);
-  });
-}
+// Static imports to avoid ChunkLoadError
+import "./swipers/main";
+import "./popups/main";
 
 import "../css/main.scss";
