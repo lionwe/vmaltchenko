@@ -83,7 +83,7 @@
     &__title {
         @include typography($font-family-Involve, $fw-regular, 50px, 50px);
         text-align: center;
-        margin-bottom: convert-to-rem(67px);
+        margin-bottom: convert-to-rem(30px);
 
         @include mobile {
             margin-bottom: convert-to-rem(14px);
