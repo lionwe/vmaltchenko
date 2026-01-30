@@ -189,6 +189,31 @@
                 "placeholder": ""
             },
             {
+                "key": "field_social_facebook_icon",
+                "label": "Іконка Facebook (SVG)",
+                "name": "social_facebook_icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "svg"
+            },
+            {
                 "key": "field_social_instagram",
                 "label": "Instagram",
                 "name": "social_instagram",
@@ -204,6 +229,31 @@
                 },
                 "default_value": "",
                 "placeholder": ""
+            },
+            {
+                "key": "field_social_instagram_icon",
+                "label": "Іконка Instagram (SVG)",
+                "name": "social_instagram_icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "svg"
             },
             {
                 "key": "field_social_tiktok",
@@ -223,6 +273,31 @@
                 "placeholder": ""
             },
             {
+                "key": "field_social_tiktok_icon",
+                "label": "Іконка TikTok (SVG)",
+                "name": "social_tiktok_icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "svg"
+            },
+            {
                 "key": "field_social_telegram",
                 "label": "Telegram",
                 "name": "social_telegram",
@@ -240,6 +315,31 @@
                 "placeholder": ""
             },
             {
+                "key": "field_social_telegram_icon",
+                "label": "Іконка Telegram (SVG)",
+                "name": "social_telegram_icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "svg"
+            },
+            {
                 "key": "field_social_youtube",
                 "label": "YouTube",
                 "name": "social_youtube",
@@ -255,6 +355,31 @@
                 },
                 "default_value": "",
                 "placeholder": ""
+            },
+            {
+                "key": "field_social_youtube_icon",
+                "label": "Іконка YouTube (SVG)",
+                "name": "social_youtube_icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "svg"
             },
             {
                 "key": "field_tab_schedule",

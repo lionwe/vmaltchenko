@@ -1,1 +1,126 @@
-footer {}
+@use "../base/variables" as *;
+@use "../utils/mixins" as *;
+
+.page-footer {
+    background-color: var(--color-gray-dark);
+    padding-top: convert-to-rem(40px);
+    padding-bottom: convert-to-rem(35px);
+    margin-top: convert-to-rem(100px);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        @include mobile {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: end;
+            gap: convert-to-rem(10px);
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: convert-to-rem(40px);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            a {
+                @include typography($font-family-Inter, $fw-regular, 16px, 16px);
+                color: var(--color-white);
+                text-decoration: none;
+                letter-spacing: 0;
+                transition: opacity 0.3s ease;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: convert-to-rem(20px);
+        }
+    }
+
+    &__separator-vertical {
+        width: convert-to-rem(1px);
+        height: convert-to-rem(28px);
+        background-color: var(--color-white);
+        border-radius: convert-to-rem(32px);
+        margin-left: convert-to-rem(50px);
+        margin-right: convert-to-rem(50px);
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        gap: convert-to-rem(13px);
+    }
+
+    &__social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__social-icon {
+        width: convert-to-rem(30px);
+        height: convert-to-rem(30px);
+        object-fit: contain;
+    }
+
+    &__separator-horizontal {
+        width: min(100%, convert-to-rem(898px));
+        height: 1px;
+        background-color: var(--color-border-separator-light);
+        border: none;
+        margin-top: convert-to-rem(30px);
+        margin-bottom: convert-to-rem(30px);
+        opacity: 1;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__developer {
+        @include typography($font-family-Inter, $fw-regular, (14px, 16px), (16px, 20px));
+        color: var(--color-white);
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
