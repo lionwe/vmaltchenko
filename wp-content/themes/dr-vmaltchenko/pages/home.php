@@ -15,6 +15,7 @@ Template Name: Home
     <?php get_template_part('sections/home/consultation-process'); ?>
     <?php get_template_part('sections/home/treatment-results'); ?>
     <?php get_template_part('sections/home/faq'); ?>
+    <?php get_template_part('sections/home/contacts'); ?>
 </main>
 
 <?php get_footer(); ?>

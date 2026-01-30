@@ -1,0 +1,367 @@
+@use "../../base/variables" as *;
+@use "../../utils/mixins" as *;
+
+.contacts {
+    &__wrapper {
+        border-radius: convert-to-rem(20px);
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0px 4px 59px 0px #00000040;
+        padding: convert-to-rem(48px) convert-to-rem(45px) convert-to-rem(32px) convert-to-rem(40px);
+
+        @include mobile {
+            padding: 21px 8px 0 8px;
+            border-radius: 0;
+            box-shadow: none;
+            width: 100vw;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 0.8fr;
+        gap: convert-to-rem(36px);
+        position: relative;
+        z-index: 1;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            gap: convert-to-rem(30px);
+        }
+    }
+
+    // --- LEFT COLUMN: INFO (Image + Overlay + Data) ---
+    &__col-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border-radius: convert-to-rem(20px);
+        overflow: hidden;
+        padding: convert-to-rem(80px) convert-to-rem(28px) convert-to-rem(80px) convert-to-rem(35px);
+
+        @include mobile {
+            min-height: auto;
+            height: convert-to-rem(600px);
+            width: 100%;
+            padding: convert-to-rem(20px);
+            order: 2;
+            margin-top: convert-to-rem(124px);
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+
+        &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__info-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+    }
+
+    &__overlay-text {
+        color: var(--color-white);
+        margin-bottom: convert-to-rem(28px);
+
+        h2 {
+            @include typography($font-family-Involve, $fw-semibold, (32px, 42px), 1.2);
+            margin-bottom: convert-to-rem(10px);
+        }
+
+        p {
+            @include typography($font-family-Inter, $fw-regular, 16px, 1.5);
+        }
+    }
+
+    &__data-grid {
+        display: flex;
+        width: 100%;
+        align-items: flex-end;
+
+        @include mobile {
+            gap: convert-to-rem(20px);
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    // Contact List (Phone, Email, Address)
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: convert-to-rem(23px);
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        height: auto;
+        border-radius: convert-to-rem(10px);
+        padding: convert-to-rem(10px);
+        padding-right: convert-to-rem(24px);
+        gap: convert-to-rem(14px);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+
+        &-icon {
+            width: convert-to-rem(42px);
+            height: convert-to-rem(42px);
+            border-radius: 50%;
+            background: #0B3A6E;
+            border: 1px solid #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+
+            img,
+            svg {
+                width: convert-to-rem(19px);
+                height: convert-to-rem(19px);
+                object-fit: contain;
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        &-text {
+            @include typography($font-family-Involve, $fw-semibold, 15px, 1);
+            color: #FFFFFF;
+            text-decoration: none;
+            letter-spacing: 0%;
+            transition: color 0.3s ease;
+
+            &:visited,
+            &:hover,
+            &:active,
+            &:focus {
+                color: #FFFFFF !important;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    // Schedule Block
+    &__schedule {
+        display: flex;
+        align-items: flex-end;
+        margin-left: auto;
+
+        @include mobile {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+
+    &__schedule-inner {
+        width: fit-content;
+        height: auto;
+        border-radius: convert-to-rem(12px);
+        padding: convert-to-rem(20px) convert-to-rem(24px) convert-to-rem(20px) convert-to-rem(10px);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+    }
+
+    &__schedule-icon {
+        width: convert-to-rem(48px);
+        height: convert-to-rem(54px);
+        margin-right: convert-to-rem(15px);
+        flex-shrink: 0;
+
+        img,
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__schedule-list {
+        display: flex;
+        flex-direction: column;
+        @include typography($font-family-Involve, $fw-semibold, 15px, 1);
+        letter-spacing: 0.04em; // 4%
+        color: #FFFFFF;
+        text-align: right;
+    }
+
+    &__schedule-row {
+        white-space: nowrap;
+        margin-bottom: convert-to-rem(8px);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+
+    // --- RIGHT COLUMN: FORM ---
+    &__col-form {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: auto;
+        position: relative;
+        justify-content: center;
+
+        @include mobile {
+            padding: convert-to-rem(40px) convert-to-rem(20px);
+            order: 1;
+            background: rgba(255, 255, 255, 0.4);
+            border: convert-to-rem(4px) solid var(--color-white);
+            border-radius: convert-to-rem(20px);
+            box-shadow: 0px 4px 50px 0px rgba(52, 145, 200, 0.1);
+        }
+    }
+
+    &__form-intro {
+        margin-bottom: convert-to-rem(28px);
+        text-align: center;
+
+        h3 {
+            @include typography($font-family-Involve, $fw-medium, (23px, 30px), 1);
+            text-transform: uppercase;
+            color: var(--color-text);
+            margin-bottom: convert-to-rem(10px);
+
+            @include mobile {
+                font-weight: $fw-semibold;
+            }
+        }
+
+        p {
+            @include typography($font-family-Inter, $fw-regular, 18px, 1);
+            color: var(--color-text);
+        }
+    }
+
+
+    // Form Styles (Copied from CTA)
+    .contacts-form,
+    &__form-wrapper form {
+        display: flex;
+        flex-direction: column;
+        gap: convert-to-rem(30px);
+        max-width: convert-to-rem(531px);
+        margin: 0 auto;
+        width: 100%;
+
+        @include mobile {
+            max-width: 100%;
+            position: static;
+        }
+
+        &__group {
+            display: flex;
+            flex-direction: column;
+            gap: convert-to-rem(8px);
+        }
+
+        &__label {
+            @include typography($font-family-Inter, $fw-regular, 14px, 1);
+            color: var(--color-text-muted);
+            opacity: 1;
+        }
+
+        &__input {
+            border: none;
+            border-bottom: 1px solid var(--color-text-muted);
+            background: transparent;
+            padding: convert-to-rem(10px) 0;
+            @include typography($font-family-Inter, $fw-regular, 18px, 1);
+            color: var(--color-text-muted);
+            width: 100%;
+            border-radius: 0;
+
+            &::placeholder {
+                color: var(--color-text-muted);
+            }
+
+            &:focus {
+                outline: none;
+                border-bottom-color: var(--color-primary);
+                color: var(--color-text);
+            }
+
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+                -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+                -webkit-text-fill-color: var(--color-text-muted) !important;
+                background-color: transparent !important;
+                transition: background-color 5000s ease-in-out 0s;
+            }
+        }
+
+        &__button-wrapper {
+            margin-top: convert-to-rem(6px);
+
+            @include mobile {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: auto;
+                margin-top: convert-to-rem(20px);
+                z-index: 5;
+            }
+        }
+
+        &__button {
+            width: 100%;
+            display: flex;
+
+            @include mobile {
+                width: auto;
+                min-width: max-content;
+            }
+
+            .btn__text {
+                @include typography($font-family-Involve, $fw-semibold, (16px, 17.41px), 1);
+                flex-grow: 1;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include mobile {
+                    padding: convert-to-rem(17px) convert-to-rem(19px);
+                    flex-grow: 0;
+                }
+            }
+
+            .btn__icon-wrapper {
+
+                img,
+                svg {
+                    width: convert-to-rem(10px);
+                    height: convert-to-rem(10px);
+                }
+            }
+        }
+    }
+}

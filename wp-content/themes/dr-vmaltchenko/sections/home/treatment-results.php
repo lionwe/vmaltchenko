@@ -20,7 +20,7 @@ $button_args = [
 ];
 ?>
 
-<section class="treatment-results">
+<section id="treatment-results" class="treatment-results">
     <div class="container">
 
         <div class="treatment-results__header">

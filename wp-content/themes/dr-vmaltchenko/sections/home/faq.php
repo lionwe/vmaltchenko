@@ -14,7 +14,7 @@ if (!$faq_list)
     return;
 ?>
 
-<section class="faq">
+<section id="faq" class="faq">
 
     <div class="container">
         <div class="faq__header faq__header--mobile">
