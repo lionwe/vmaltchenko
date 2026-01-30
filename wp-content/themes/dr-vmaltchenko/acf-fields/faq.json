@@ -1,0 +1,74 @@
+[
+    {
+        "key": "group_faq_section",
+        "title": "FAQ Section",
+        "fields": [
+            {
+                "key": "field_faq_background",
+                "label": "Фонове зображення",
+                "name": "faq_background",
+                "type": "image",
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all"
+            },
+            {
+                "key": "field_faq_badge",
+                "label": "Бейджик",
+                "name": "faq_badge",
+                "type": "text"
+            },
+            {
+                "key": "field_faq_heading",
+                "label": "Заголовок",
+                "name": "faq_heading",
+                "type": "wysiwyg",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1
+            },
+            {
+                "key": "field_faq_list",
+                "label": "Питання та відповіді",
+                "name": "faq_list",
+                "type": "repeater",
+                "layout": "row",
+                "button_label": "Додати питання",
+                "sub_fields": [
+                    {
+                        "key": "field_faq_question",
+                        "label": "Питання",
+                        "name": "question",
+                        "type": "text"
+                    },
+                    {
+                        "key": "field_faq_answer",
+                        "label": "Відповідь",
+                        "name": "answer",
+                        "type": "wysiwyg",
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "templates/home.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]
