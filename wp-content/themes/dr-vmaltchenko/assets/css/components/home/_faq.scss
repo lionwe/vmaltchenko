@@ -1,0 +1,257 @@
+@use "../../base/variables" as *;
+@use "../../utils/mixins" as *;
+
+.faq {
+    position: relative;
+
+    // Wrapper container
+    &__wrapper {
+        width: 100%;
+        height: auto;
+        border-radius: convert-to-rem(20px);
+        box-shadow: 0px 4px 50px 0px #00000040;
+        padding: convert-to-rem(42px) convert-to-rem(109px) convert-to-rem(42px) convert-to-rem(109px);
+        position: relative;
+        overflow: hidden;
+
+        @include mobile {
+            padding: convert-to-rem(29px) convert-to-rem(20px);
+            margin-left: convert-to-rem(-20px);
+            margin-right: convert-to-rem(-20px);
+            width: calc(100% + #{convert-to-rem(40px)});
+            border-radius: convert-to-rem(20px);
+            box-shadow: none;
+            overflow: hidden;
+            background: transparent;
+        }
+    }
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: convert-to-rem(50px);
+        text-align: center;
+
+        &--mobile {
+            display: none;
+
+            @include mobile {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: convert-to-rem(16px);
+                text-align: left;
+            }
+        }
+
+        &--desktop {
+            @include mobile {
+                display: none;
+            }
+        }
+    }
+
+    &__badge {
+        width: fit-content;
+        height: auto;
+        border-radius: convert-to-rem(10px);
+        padding: convert-to-rem(10px);
+        background: linear-gradient(90deg, #E8F2F7 0%, #FFFFFF 100%);
+        margin-bottom: convert-to-rem(14px);
+
+        // Typography
+        @include typography($font-family-Involve, $fw-regular, 14px, 1);
+        color: var(--color-text);
+    }
+
+    &__title {
+        h2 {
+            @include typography($font-family-Involve, $fw-regular, (50px, 60px), 1);
+            letter-spacing: 0%;
+
+            @include mobile {
+                text-align: left;
+            }
+        }
+
+        p {
+            @include typography($font-family-Involve, $fw-regular, 16px, 1.5);
+            margin-top: convert-to-rem(10px);
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: convert-to-rem(20px);
+        width: 100%;
+    }
+
+    &__item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &.active {
+            .faq__question {
+                background: var(--color-primary);
+            }
+
+            .faq__question-text {
+                color: var(--color-white);
+            }
+
+            .faq__icon-plus {
+                display: none;
+            }
+
+            .faq__icon-minus {
+                display: block;
+            }
+        }
+    }
+
+    &__question {
+        width: 100%;
+        height: auto;
+        border-radius: convert-to-rem(20px);
+        background: #E8F2F7;
+        padding: convert-to-rem(22px) convert-to-rem(39px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        gap: convert-to-rem(20px);
+        transition: background-color 0.3s ease;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+
+        @include mobile {
+            padding: convert-to-rem(22px) convert-to-rem(10px);
+        }
+    }
+
+    &__question-text {
+        @include typography($font-family-Involve, $fw-regular, 20px, 20px);
+        letter-spacing: 0%;
+        color: var(--color-text);
+        transition: color 0.3s ease;
+    }
+
+    &__icon {
+        width: convert-to-rem(24px);
+        height: convert-to-rem(24px);
+        min-width: convert-to-rem(24px);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-plus {
+            display: block;
+        }
+
+        &-minus {
+            display: none;
+
+            img {
+                display: block;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__answer {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease;
+    }
+
+    &__answer-inner {
+        padding: convert-to-rem(31px) 0 convert-to-rem(31px) convert-to-rem(39px);
+        max-width: convert-to-rem(861px);
+        color: var(--color-text);
+
+        p {
+            @include typography($font-family-Involve, $fw-regular, 20px, 1);
+            letter-spacing: 0%;
+            margin: 0;
+
+            &:not(:last-child) {
+                margin-bottom: convert-to-rem(10px);
+            }
+        }
+
+        strong,
+        b {
+            font-weight: $fw-bold;
+        }
+
+        em,
+        i {
+            font-style: italic;
+        }
+
+        ul,
+        ol {
+            margin: convert-to-rem(10px) 0;
+            padding-left: convert-to-rem(20px);
+            columns: 2;
+            column-gap: convert-to-rem(40px);
+
+            @include mobile {
+                columns: 1;
+            }
+
+            li {
+                @include typography($font-family-Involve, $fw-regular, 20px, 1);
+                letter-spacing: 0%;
+                margin-bottom: convert-to-rem(5px);
+                break-inside: avoid;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        ul {
+            list-style: disc;
+        }
+
+        ol {
+            list-style: decimal;
+        }
+
+        @include mobile {
+            padding: convert-to-rem(11px) 0 convert-to-rem(14px) 0;
+        }
+    }
+}
