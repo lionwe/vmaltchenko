@@ -11,7 +11,7 @@ $doctor_image_url = get_field('hero_doctor_image');
 $patients_text = get_field('hero_patients_text') ?: '+ 100 задоволених пацієнтів';
 ?>
 
-<section class="hero">
+<section id="hero" class="hero">
 	<?php if ($bg_image_url): ?>
 		<div class="hero__background">
 			<?php echo get_picture([
