@@ -61,22 +61,14 @@ $services_query = new WP_Query($args);
                         <div class="services__nav">
                             <button type="button" class="btn btn--slider-nav services-prev">
                                 <span class="btn__icon-wrapper">
-                                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.146446 3.32833C-0.0488157 3.52359 -0.0488157 3.84018 0.146446 4.03544L3.32843 7.21742C3.52369 7.41268 3.84027 7.41268 4.03553 7.21742C4.2308 7.02216 4.2308 6.70557 4.03553 6.51031L1.20711 3.68188L4.03553 0.853457C4.2308 0.658195 4.2308 0.341612 4.03553 0.14635C3.84027 -0.048912 3.52369 -0.048912 3.32843 0.14635L0.146446 3.32833ZM11.5 3.68188L11.5 3.18188L0.5 3.18188L0.5 3.68188L0.5 4.18188L11.5 4.18188L11.5 3.68188Z"
-                                            fill="black" />
-                                    </svg>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/svg/arrow-prev.svg"
+                                        alt="Prev">
                                 </span>
                             </button>
                             <button type="button" class="btn btn--slider-nav services-next">
                                 <span class="btn__icon-wrapper">
-                                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M11.3536 4.03544C11.5488 3.84018 11.5488 3.52359 11.3536 3.32833L8.17157 0.146351C7.97631 -0.0489113 7.65973 -0.0489113 7.46447 0.146351C7.2692 0.341613 7.2692 0.658195 7.46447 0.853458L10.2929 3.68188L7.46447 6.51031C7.2692 6.70557 7.2692 7.02216 7.46447 7.21742C7.65973 7.41268 7.97631 7.41268 8.17157 7.21742L11.3536 4.03544ZM0 3.68188V4.18188H11V3.68188V3.18188H0V3.68188Z"
-                                            fill="white" />
-                                    </svg>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/svg/arrow-next.svg"
+                                        alt="Next">
                                 </span>
                             </button>
                         </div>
