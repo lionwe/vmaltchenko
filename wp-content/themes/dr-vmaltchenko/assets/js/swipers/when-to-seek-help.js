@@ -11,8 +11,8 @@ const initWhenToSeekHelpSwiper = () => {
         spaceBetween: 20,
         enabled: true,
         navigation: {
-            nextEl: ".when-to-seek-help__next",
-            prevEl: ".when-to-seek-help__prev",
+            nextEl: ".when-to-seek-help-next",
+            prevEl: ".when-to-seek-help-prev",
         },
         pagination: {
             el: ".when-to-seek-help__pagination",

@@ -102,6 +102,10 @@
                 fill: var(--color-white);
                 stroke: var(--color-white);
             }
+
+            img {
+                filter: brightness(0) invert(1);
+            }
         }
 
         @include hover {
@@ -128,8 +132,12 @@
 
             .btn__icon-wrapper {
                 svg {
-                    fill: var(--color-gray);
-                    stroke: var(--color-gray);
+                    fill: var(--color-black); // User requested black
+                    stroke: var(--color-black);
+                }
+
+                img {
+                    filter: brightness(0); // Forces both white and black icons to black
                 }
             }
         }

@@ -72,22 +72,20 @@ $bottom_description = get_field('bottom_description');
                     <div class="when-to-seek-help__controls">
                         <div class="when-to-seek-help__nav">
                             <div class="when-to-seek-help__prev">
-                                <?php get_template_part('templates/button', null, [
-                                    'type' => 'slider-nav',
-                                    'icon_name' => 'arrow-prev',
-                                    'class' => '',
-                                    'link' => false,
-                                    'text' => ''
-                                ]); ?>
+                                <button type="button" class="btn btn--slider-nav when-to-seek-help-prev">
+                                    <span class="btn__icon-wrapper">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/svg/arrow-prev.svg"
+                                            alt="Prev">
+                                    </span>
+                                </button>
                             </div>
                             <div class="when-to-seek-help__next">
-                                <?php get_template_part('templates/button', null, [
-                                    'type' => 'slider-nav',
-                                    'icon_name' => 'arrow-next',
-                                    'class' => '',
-                                    'link' => false,
-                                    'text' => ''
-                                ]); ?>
+                                <button type="button" class="btn btn--slider-nav when-to-seek-help-next">
+                                    <span class="btn__icon-wrapper">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/svg/arrow-next.svg"
+                                            alt="Next">
+                                    </span>
+                                </button>
                             </div>
                         </div>
                         <div class="when-to-seek-help__pagination swiper-pagination"></div>
