@@ -1,5 +1,4 @@
 import "./utils";
-import "./utils/smooth-scroll";
 import "./components/main";
 
 // Static imports to avoid ChunkLoadError

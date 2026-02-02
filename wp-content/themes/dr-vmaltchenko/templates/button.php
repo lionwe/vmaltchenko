@@ -48,12 +48,13 @@ $class_attr = 'class="' . esc_attr(implode(' ', $classes)) . '"';
             $icon_path_root = get_template_directory() . '/assets/img/' . $args['icon_name'] . '.svg';
 
             if (file_exists($icon_path_svg)) {
-                echo file_get_contents($icon_path_svg);
+                $icon_url = get_template_directory_uri() . '/assets/img/svg/' . $args['icon_name'] . '.svg';
+                echo '<img src="' . esc_url($icon_url) . '" alt="">';
             } elseif (file_exists($icon_path_root)) {
-                echo file_get_contents($icon_path_root);
+                $icon_url = get_template_directory_uri() . '/assets/img/' . $args['icon_name'] . '.svg';
+                echo '<img src="' . esc_url($icon_url) . '" alt="">';
             } else {
-                // Fallback if SVG not found - maybe standard get_picture or just empty
-                // For now, nothing or simple placeholder if debugging
+                // Fallback if SVG not found
             }
             ?>
         </span>

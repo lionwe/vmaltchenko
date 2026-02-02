@@ -3,6 +3,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const header = document.querySelector('.header');
 
+    let lastScrollTop = 0;
+    const scrollThreshold = 100;
+
+    // Hide/Show Header on Scroll
+    const handleHeaderVisibility = () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (header.classList.contains('menu-open')) return;
+
+        if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+            header.classList.add('header--hidden');
+        } else if (currentScroll < lastScrollTop) {
+            header.classList.remove('header--hidden');
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    };
+
     // Scroll Background Trigger
     const handleScroll = () => {
         if (window.scrollY > 50) {
@@ -10,23 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             header.classList.remove('is-scrolled');
         }
+
+        handleHeaderVisibility();
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
+    // Intersection Observer для активних пунктів меню
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.5 
+        threshold: 0.5
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Remove active class from all links
                 menuLinks.forEach(link => link.classList.remove('active'));
 
-                // Find the link that corresponds to the visible section
                 const activeLink = document.querySelector(`.header__menu-link[href="#${entry.target.id}"]`);
                 if (activeLink) {
                     activeLink.classList.add('active');
