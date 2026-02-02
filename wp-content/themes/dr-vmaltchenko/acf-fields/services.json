@@ -1,20 +1,24 @@
 [
     {
         "key": "group_services_section",
-        "title": "Home - Services Section",
+        "title": "Home - Services",
         "fields": [
             {
                 "key": "field_services_badge",
-                "label": "Badge",
+                "label": "Бейджик",
                 "name": "services_badge",
                 "type": "text",
+                "instructions": "Текст бейджика над заголовком",
+                "required": 0,
                 "default_value": "Наші послуги"
             },
             {
                 "key": "field_services_title",
-                "label": "Title & Description",
+                "label": "Заголовок і опис",
                 "name": "services_title",
                 "type": "wysiwyg",
+                "instructions": "Введіть заголовок (H2) та опис",
+                "required": 0,
                 "tabs": "visual",
                 "toolbar": "full",
                 "media_upload": 0,
@@ -22,9 +26,11 @@
             },
             {
                 "key": "field_services_selected",
-                "label": "Select Services",
+                "label": "Вибрані послуги",
                 "name": "services_selected",
                 "type": "relationship",
+                "instructions": "Оберіть послуги для відображення на головній сторінці",
+                "required": 0,
                 "post_type": [
                     "services"
                 ],
@@ -41,7 +47,7 @@
                 {
                     "param": "page_template",
                     "operator": "==",
-                    "value": "pages/home.php"
+                    "value": "templates/home.php"
                 }
             ]
         ],

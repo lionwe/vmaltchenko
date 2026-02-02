@@ -1,23 +1,26 @@
 [
     {
         "key": "group_about_me",
-        "title": "About Me",
+        "title": "Home - About Me",
         "fields": [
             {
                 "key": "field_about_image",
                 "label": "Зображення лікаря",
                 "name": "about_image",
                 "type": "image",
+                "instructions": "Оберіть зображення у форматі WebP",
+                "required": 0,
                 "return_format": "url",
                 "preview_size": "medium",
-                "library": "all",
-                "instructions": "Оберіть зображення у форматі WebP"
+                "library": "all"
             },
             {
                 "key": "field_about_badge",
                 "label": "Бейджик",
                 "name": "about_badge",
                 "type": "text",
+                "instructions": "Текст бейджика над заголовком",
+                "required": 0,
                 "default_value": "Хто я?"
             },
             {
@@ -25,40 +28,51 @@
                 "label": "Головний контент",
                 "name": "about_main_content",
                 "type": "wysiwyg",
+                "instructions": "Введіть заголовок (H2) та опис",
+                "required": 0,
                 "tabs": "all",
                 "toolbar": "full",
-                "media_upload": 0,
-                "instructions": "Заголовок (H2) та опис"
+                "media_upload": 0
             },
             {
                 "key": "field_about_cards",
                 "label": "Карточки досвіду",
                 "name": "about_cards",
                 "type": "repeater",
+                "instructions": "Додайте до 3 карточок з показниками досвіду",
+                "required": 0,
                 "layout": "table",
+                "min": 0,
                 "max": 3,
+                "button_label": "Додати карточку",
                 "sub_fields": [
                     {
                         "key": "field_about_card_badge",
-                        "label": "Бейджик картки",
+                        "label": "Бейджик карточки",
                         "name": "card_badge",
                         "type": "text",
+                        "instructions": "Наприклад: ДОСВІДУ",
+                        "required": 0,
                         "default_value": "ДОСВІДУ"
                     },
                     {
                         "key": "field_about_card_value",
-                        "label": "Значення картки",
+                        "label": "Значення карточки",
                         "name": "card_value",
                         "type": "text",
+                        "instructions": "Наприклад: +10 років",
+                        "required": 0,
                         "default_value": "+10 років"
                     }
                 ]
             },
             {
                 "key": "field_about_grid_text",
-                "label": "Текст в гріді (4-й елемент)",
+                "label": "Текст в гріді",
                 "name": "about_grid_text",
                 "type": "wysiwyg",
+                "instructions": "Текстовий блок у 4-му елементі гріду",
+                "required": 0,
                 "tabs": "visual",
                 "toolbar": "basic",
                 "media_upload": 0
@@ -72,6 +86,14 @@
                     "value": "templates/home.php"
                 }
             ]
-        ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
     }
 ]

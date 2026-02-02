@@ -1,14 +1,14 @@
 [
     {
         "key": "group_cta_settings",
-        "title": "CTA Section",
+        "title": "Home - CTA",
         "fields": [
             {
                 "key": "field_cta_container_bg",
-                "label": "Background Image",
+                "label": "Фонове зображення",
                 "name": "cta_container_bg",
                 "type": "image",
-                "instructions": "Image for the main wrapper background",
+                "instructions": "Фонове зображення для секції",
                 "required": 0,
                 "return_format": "array",
                 "preview_size": "medium",
@@ -16,10 +16,10 @@
             },
             {
                 "key": "field_cta_content",
-                "label": "Content",
+                "label": "Контент",
                 "name": "cta_content",
                 "type": "wysiwyg",
-                "instructions": "Title and description",
+                "instructions": "Введіть заголовок (H2) та опис",
                 "required": 0,
                 "tabs": "all",
                 "toolbar": "full",
@@ -27,18 +27,18 @@
             },
             {
                 "key": "field_cta_form_shortcode",
-                "label": "Form Shortcode",
+                "label": "Шорткод форми",
                 "name": "cta_form_shortcode",
                 "type": "text",
-                "instructions": "Shortcode for the form (e.g., [contact-form-7 ...])",
+                "instructions": "Шорткод Contact Form 7 (наприклад: [contact-form-7 ...])",
                 "required": 0
             },
             {
                 "key": "field_cta_right_image",
-                "label": "Right Image",
+                "label": "Праве зображення",
                 "name": "cta_right_image",
                 "type": "image",
-                "instructions": "Image displayed in the right container",
+                "instructions": "Зображення у правій частині секції",
                 "required": 0,
                 "return_format": "array",
                 "preview_size": "medium",
@@ -51,13 +51,6 @@
                     "param": "page_template",
                     "operator": "==",
                     "value": "templates/home.php"
-                }
-            ],
-            [
-                {
-                    "param": "page_type",
-                    "operator": "==",
-                    "value": "front_page"
                 }
             ]
         ],

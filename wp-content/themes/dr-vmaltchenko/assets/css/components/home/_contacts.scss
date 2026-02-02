@@ -160,14 +160,27 @@
         }
     }
 
+    // Meta Column (Schedule + Socials)
+    &__meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: auto;
+        gap: convert-to-rem(20px);
+
+        @include mobile {
+            margin-left: 0;
+            width: 100%;
+            align-items: flex-start;
+        }
+    }
+
     // Schedule Block
     &__schedule {
         display: flex;
         align-items: flex-end;
-        margin-left: auto;
 
         @include mobile {
-            margin-left: 0;
             width: 100%;
         }
     }
@@ -212,6 +225,46 @@
 
         &:last-child {
             margin-bottom: 0;
+        }
+    }
+
+    // Socials Block
+    &__socials {
+        display: flex;
+        align-items: center;
+        gap: convert-to-rem(10px);
+        padding: convert-to-rem(10px);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: convert-to-rem(12px);
+        width: fit-content;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__social-link {
+        display: block;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__social-icon {
+        width: convert-to-rem(30px);
+        height: convert-to-rem(30px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img,
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
     }
 

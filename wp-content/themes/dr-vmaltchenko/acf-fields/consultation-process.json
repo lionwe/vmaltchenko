@@ -1,41 +1,24 @@
 [
     {
         "key": "group_consultation_process",
-        "title": "Consultation Process",
+        "title": "Home - Consultation Process",
         "fields": [
             {
                 "key": "field_consultation_badge",
-                "label": "Badge",
+                "label": "Бейджик",
                 "name": "consultation_badge",
                 "type": "text",
-                "instructions": "",
+                "instructions": "Текст бейджика над заголовком",
                 "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
+                "default_value": ""
             },
             {
                 "key": "field_consultation_heading",
-                "label": "Heading",
+                "label": "Заголовок і опис",
                 "name": "consultation_heading",
                 "type": "wysiwyg",
-                "instructions": "",
+                "instructions": "Введіть заголовок (H2) та опис",
                 "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
                 "tabs": "all",
                 "toolbar": "full",
                 "media_upload": 1,
@@ -43,61 +26,34 @@
             },
             {
                 "key": "field_consultation_cards",
-                "label": "Cards",
+                "label": "Картки етапів",
                 "name": "consultation_cards",
                 "type": "repeater",
-                "instructions": "",
+                "instructions": "Додайте картки з етапами консультації",
                 "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "collapsed": "",
                 "min": 0,
                 "max": 0,
                 "layout": "table",
-                "button_label": "Add Row",
+                "button_label": "Додати етап",
                 "sub_fields": [
                     {
                         "key": "field_consultation_card_icon",
-                        "label": "Icon",
+                        "label": "Іконка",
                         "name": "icon",
                         "type": "image",
-                        "instructions": "",
+                        "instructions": "SVG іконка етапу",
                         "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
                         "return_format": "array",
                         "preview_size": "medium",
-                        "library": "all",
-                        "min_width": "",
-                        "min_height": "",
-                        "min_size": "",
-                        "max_width": "",
-                        "max_height": "",
-                        "max_size": "",
-                        "mime_types": ""
+                        "library": "all"
                     },
                     {
                         "key": "field_consultation_card_content",
-                        "label": "Content",
+                        "label": "Контент",
                         "name": "content",
                         "type": "wysiwyg",
-                        "instructions": "Use H3 for title and P for text",
+                        "instructions": "Введіть заголовок (H3) та опис",
                         "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
                         "tabs": "all",
                         "toolbar": "full",
                         "media_upload": 0,
@@ -111,7 +67,7 @@
                 {
                     "param": "page_template",
                     "operator": "==",
-                    "value": "pages/home.php"
+                    "value": "templates/home.php"
                 }
             ]
         ],
