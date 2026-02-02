@@ -237,7 +237,7 @@
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         border-radius: convert-to-rem(12px);
-        width: fit-content;
+        width: 100%; // Changed from fit-content to 100%
 
         @include mobile {
             width: 100%;
