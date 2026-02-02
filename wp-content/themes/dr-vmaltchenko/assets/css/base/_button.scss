@@ -8,7 +8,10 @@
     border: none;
     background: transparent;
     padding: 0;
-    transition: opacity 0.3s ease;
+    transition:
+        opacity 0.3s ease,
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s ease;
     width: fit-content;
 
     // Element styling
@@ -20,7 +23,7 @@
         justify-content: center;
         height: 100%;
         vertical-align: middle;
-        transition: background-color 0.3s ease;
+        transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     &__icon-wrapper {
@@ -28,58 +31,119 @@
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        transition: background-color 0.3s ease;
+        transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         svg {
             width: convert-to-rem(12px);
             height: convert-to-rem(12px);
             fill: var(--color-white);
             stroke: var(--color-white);
+            transition: fill 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                stroke 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 
     // Modifiers
     &--primary {
-        position: relative;
-        height: convert-to-rem(64px);
+        background-color: var(--color-primary);
+        padding: convert-to-rem(16px);
+        border-radius: convert-to-rem(10px);
+        gap: convert-to-rem(5px);
 
         .btn__text {
-            background-color: var(--color-primary);
-            padding: convert-to-rem(17px) convert-to-rem(19px);
-            border-radius: convert-to-rem(20px);
-            height: 100%;
-            min-height: convert-to-rem(60px);
-
-            position: relative;
-            z-index: 1;
-            display: inline-flex;
+            @include typography($font-family-Involve, $fw-medium, 17.41px, 1, -0.01em);
+            color: var(--color-white);
+            vertical-align: middle;
         }
 
         .btn__icon-wrapper {
-            width: convert-to-rem(64px);
-            height: convert-to-rem(60px);
-            background-color: var(--color-primary);
-            border-radius: convert-to-rem(32px);
-            margin-left: convert-to-rem(0px);
-            position: relative;
-            z-index: 0;
-            transform: translateZ(0);
-            backface-visibility: hidden;
-
+            width: convert-to-rem(29px);
+            height: convert-to-rem(29px);
+            border-radius: convert-to-rem(14.5px);
+            background: var(--color-white);
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--color-primary);
+
+            svg {
+                width: convert-to-rem(7.5px);
+                height: convert-to-rem(7.5px);
+
+                path {
+                    fill: var(--color-primary);
+                    // ✅ плавний перехід для path
+                    transition: fill 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                }
+            }
+
+            img {
+                width: convert-to-rem(7.5px);
+                height: convert-to-rem(7.5px);
+                object-fit: contain;
+            }
         }
 
         @include hover {
-            .btn__text {
-                background-color: var(--color-primary-dark);
-            }
+            background-color: var(--color-primary-dark);
+        }
+    }
 
-            .btn__icon-wrapper {
-                background-color: var(--color-primary-dark);
+    // Scroll to top button
+    &--scroll-to-top {
+        position: fixed;
+        right: convert-to-rem(30px);
+        bottom: convert-to-rem(30px);
+        width: convert-to-rem(50px);
+        height: convert-to-rem(50px);
+        background-color: var(--color-primary);
+        border-radius: 50%;
+
+        @include mobile {
+            right: convert-to-rem(15px);
+            bottom: convert-to-rem(15px);
+            width: convert-to-rem(40px);
+            height: convert-to-rem(40px);
+        }
+
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+
+        .btn__icon-wrapper {
+            svg {
+                width: convert-to-rem(12px);
+                height: convert-to-rem(8px);
+                transform: rotate(90deg);
+                fill: var(--color-white);
+
+                path {
+                    fill: var(--color-white);
+                }
             }
         }
+
+        &.is-visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        @include hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        // Remove tap highlight
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+        user-select: none;
     }
 
     &--slider-nav {
@@ -88,7 +152,6 @@
         border-radius: convert-to-rem(34.5px);
         justify-content: center;
 
-        // Default (Active) State
         background-color: var(--color-gray);
         border: 1px solid var(--color-gray);
         -webkit-tap-highlight-color: transparent;
@@ -109,15 +172,8 @@
         }
 
         @include hover {
-            background-color: var(--color-gray);
-            border-color: var(--color-gray);
-
-            .btn__icon-wrapper {
-                svg {
-                    fill: var(--color-white);
-                    stroke: var(--color-white);
-                }
-            }
+            background-color: var(--color-gray-dark, var(--color-gray));
+            border-color: var(--color-gray-dark, var(--color-gray));
         }
 
         &.swiper-button-disabled,
@@ -126,18 +182,17 @@
             cursor: default;
             pointer-events: none;
 
-            // Inactive State
             background-color: var(--color-gray-light);
             border-color: var(--color-white);
 
             .btn__icon-wrapper {
                 svg {
-                    fill: var(--color-black); // User requested black
+                    fill: var(--color-black);
                     stroke: var(--color-black);
                 }
 
                 img {
-                    filter: brightness(0); // Forces both white and black icons to black
+                    filter: brightness(0);
                 }
             }
         }
@@ -154,16 +209,15 @@
     &-bullet {
         width: convert-to-rem(6px);
         height: convert-to-rem(6px);
-        background-color: var(--color-gray-medium); // Inactive
+        background-color: var(--color-gray-medium);
         opacity: 1;
         margin: 0 !important;
-
         display: block;
         border-radius: 50%;
-
+        transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         &-active {
-            background-color: var(--color-primary); // Active
+            background-color: var(--color-primary);
         }
     }
 }

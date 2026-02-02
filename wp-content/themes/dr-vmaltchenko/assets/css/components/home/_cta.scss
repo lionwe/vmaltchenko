@@ -208,17 +208,34 @@
                 justify-content: center;
 
                 @include mobile {
-                    padding: convert-to-rem(17px) convert-to-rem(19px);
                     flex-grow: 0;
                 }
             }
 
             .btn__icon-wrapper {
+                width: convert-to-rem(29px);
+                height: convert-to-rem(29px);
+                border-radius: convert-to-rem(14.5px);
+                // remove padding to prevent clipping, use flexbox centering
+                background: var(--color-white);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--color-primary);
 
-                img,
                 svg {
-                    width: convert-to-rem(10px);
-                    height: convert-to-rem(10px);
+                    width: convert-to-rem(7.5px);
+                    height: convert-to-rem(7.5px);
+
+                    path {
+                        fill: currentColor;
+                    }
+                }
+
+                img {
+                    width: convert-to-rem(7.5px);
+                    height: convert-to-rem(7.5px);
+                    object-fit: contain;
                 }
             }
         }

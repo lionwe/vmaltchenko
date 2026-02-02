@@ -15,7 +15,6 @@
 
 <body>
 
-
 	<header class="header">
 		<div class="container header__outer-container">
 			<div class="header__logo">
@@ -63,9 +62,66 @@
 					'class' => 'header__button'
 				]); ?>
 
-				<button class="header__burger" aria-label="Open Menu">
-					<?php echo file_get_contents(get_template_directory() . '/assets/img/svg/burger.svg'); ?>
-				</button>
+				<div class="header__burger-wrapper">
+					<button class="header__burger" aria-label="Open Menu" aria-expanded="false"
+						aria-controls="mobile-menu">
+						<span class="header__burger-icon-open">
+							<?php echo file_get_contents(get_template_directory() . '/assets/img/svg/burger.svg'); ?>
+						</span>
+						<span class="header__burger-icon-close" style="display: none;">
+							<?php echo file_get_contents(get_template_directory() . '/assets/img/svg/close.svg'); ?>
+						</span>
+					</button>
+				</div>
 			</div>
 		</div>
 	</header>
+
+	<!-- Mobile Menu Backdrop & Popup -->
+	<div class="backdrop" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+		<div class="mobile-popup" id="mobile-menu">
+			<div class="mobile-popup__header">
+				<div class="container mobile-popup__header-inner">
+					<div class="mobile-popup__logo">
+						<?php if (has_custom_logo()) {
+							the_custom_logo();
+						} else {
+							echo '<a href="' . esc_url(home_url('/')) . '">' . get_bloginfo('name') . '</a>';
+						} ?>
+					</div>
+					<div class="mobile-popup__close-wrapper">
+						<button class="mobile-popup__close" aria-label="Close Menu">
+							<?php echo file_get_contents(get_template_directory() . '/assets/img/svg/close.svg'); ?>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="mobile-popup__content">
+				<div class="container">
+					<nav class="mobile-popup__nav">
+						<h2 id="mobile-menu-title" class="visually-hidden">Головне меню</h2>
+						<ul class="mobile-popup__list">
+								<?php foreach ($menu_items as $link => $label): ?>
+								<li class="mobile-popup__item">
+									<a href="<?php echo esc_url($link); ?>" class="mobile-popup__link">
+											<?php echo esc_html($label); ?>
+									</a>
+								</li>
+								<?php endforeach; ?>
+						</ul>
+					</nav>
+
+					<div class="mobile-popup__cta">
+						<?php get_template_part('templates/button', null, [
+							'text' => 'Записатись на консультацію',
+							'link' => '#contacts',
+							'type' => 'primary',
+							'icon_name' => 'consultation_arrow',
+							'class' => 'mobile-popup__button'
+						]); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

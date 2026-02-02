@@ -3,30 +3,28 @@
 
 .header {
     position: fixed;
-    top: convert-to-rem(20px);
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 100;
     pointer-events: none;
-    transition: background-color 0.3s ease, top 0.3s ease, padding 0.3s ease;
-    will-change: top, padding, background-color;
+    transition: background-color 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+    will-change: padding, background-color, transform;
+
+    padding-top: convert-to-rem(20px);
 
     @include mobile {
-        top: convert-to-rem(34px);
         padding-top: convert-to-rem(10px);
         padding-bottom: convert-to-rem(10px);
-        transition: background-color 0.3s ease, top 0.3s ease, padding 0.3s ease;
     }
 
     &.is-scrolled {
         background: rgba(16, 95, 143, 0.15);
-        top: 0;
         padding-top: convert-to-rem(20px);
         padding-bottom: convert-to-rem(20px);
         backdrop-filter: blur(10px);
 
         @include mobile {
-            top: 0;
             padding-top: convert-to-rem(10px);
             padding-bottom: convert-to-rem(10px);
             background: rgba(16, 95, 143, 0.15);
@@ -34,10 +32,15 @@
         }
     }
 
+    &.header--hidden {
+        transform: translateY(-100%);
+    }
+
     &.menu-open {
         @include mobile {
-            background: rgba(16, 95, 143, 0.15);
-            backdrop-filter: blur(10px);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
         }
     }
 
@@ -108,23 +111,12 @@
         padding: 0;
         gap: convert-to-rem(10px);
         width: 100%;
-
-        @include mobile {
-            flex-direction: column;
-            align-items: stretch;
-            gap: convert-to-rem(12px);
-            width: 100%;
-        }
     }
 
     &__menu-item {
         margin: 0;
         padding: 0;
         flex-shrink: 0;
-
-        @include mobile {
-            width: 100%;
-        }
     }
 
     &__menu-link {
@@ -157,20 +149,6 @@
             background-color: var(--color-primary);
             color: var(--color-white);
         }
-
-        @include mobile {
-            width: 100%;
-            padding: convert-to-rem(16px) convert-to-rem(20px);
-            @include typography($font-family-Inter, $fw-regular, 16px, 1.3);
-            background: rgba(255, 255, 255, 0.9);
-            text-align: center;
-            white-space: normal;
-
-            &.active {
-                background-color: var(--color-primary);
-                color: var(--color-white);
-            }
-        }
     }
 
     &__actions {
@@ -182,6 +160,13 @@
     &__button {
         @include mobile {
             display: none;
+        }
+    }
+
+    &__burger-wrapper {
+        @include mobile {
+            border-radius: convert-to-rem(5px);
+            padding: 0;
         }
     }
 
@@ -224,51 +209,16 @@
             }
         }
     }
+}
 
-    &__mobile-menu {
-        display: none;
-
-        @include mobile {
-            display: block;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(16, 95, 143, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 101;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            pointer-events: none;
-            overflow-y: auto;
-            padding-top: convert-to-rem(80px);
-            padding-bottom: convert-to-rem(40px);
-
-            &.active {
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-            }
-        }
-    }
-
-    &__mobile-menu-container {
-        @include mobile {
-            display: flex;
-            flex-direction: column;
-            gap: convert-to-rem(30px);
-            padding: convert-to-rem(20px);
-            max-width: convert-to-rem(500px);
-            margin: 0 auto;
-        }
-    }
-
-    &__mobile-button {
-        @include mobile {
-            width: 100%;
-            margin-top: convert-to-rem(10px);
-        }
-    }
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

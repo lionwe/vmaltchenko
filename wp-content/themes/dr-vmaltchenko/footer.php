@@ -63,6 +63,13 @@
     </div>
 </footer>
 
+<!-- Scroll to Top Button -->
+<button id="scroll-to-top" class="btn btn--scroll-to-top" aria-label="Scroll to top">
+    <span class="btn__icon-wrapper">
+        <?php echo file_get_contents(get_template_directory() . '/assets/img/svg/arrow-prev.svg'); ?>
+    </span>
+</button>
+
 <?php wp_footer(); ?>
 </body>
 
