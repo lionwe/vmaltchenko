@@ -1,13 +1,15 @@
 [
     {
         "key": "group_faq_section",
-        "title": "FAQ Section",
+        "title": "Home - FAQ",
         "fields": [
             {
                 "key": "field_faq_background",
                 "label": "Фонове зображення",
                 "name": "faq_background",
                 "type": "image",
+                "instructions": "Оберіть фонове зображення секції",
+                "required": 0,
                 "return_format": "array",
                 "preview_size": "medium",
                 "library": "all"
@@ -16,13 +18,17 @@
                 "key": "field_faq_badge",
                 "label": "Бейджик",
                 "name": "faq_badge",
-                "type": "text"
+                "type": "text",
+                "instructions": "Текст бейджика над заголовком",
+                "required": 0
             },
             {
                 "key": "field_faq_heading",
                 "label": "Заголовок",
                 "name": "faq_heading",
                 "type": "wysiwyg",
+                "instructions": "Введіть заголовок (H2) та опис",
+                "required": 0,
                 "tabs": "all",
                 "toolbar": "full",
                 "media_upload": 1
@@ -32,6 +38,8 @@
                 "label": "Питання та відповіді",
                 "name": "faq_list",
                 "type": "repeater",
+                "instructions": "Додайте питання та відповіді для FAQ",
+                "required": 0,
                 "layout": "row",
                 "button_label": "Додати питання",
                 "sub_fields": [
@@ -39,13 +47,17 @@
                         "key": "field_faq_question",
                         "label": "Питання",
                         "name": "question",
-                        "type": "text"
+                        "type": "text",
+                        "instructions": "Текст питання",
+                        "required": 0
                     },
                     {
                         "key": "field_faq_answer",
                         "label": "Відповідь",
                         "name": "answer",
                         "type": "wysiwyg",
+                        "instructions": "Текст відповіді",
+                        "required": 0,
                         "tabs": "all",
                         "toolbar": "full",
                         "media_upload": 1

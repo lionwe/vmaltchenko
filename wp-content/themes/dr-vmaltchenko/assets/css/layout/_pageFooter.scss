@@ -61,41 +61,11 @@
         }
     }
 
-    &__separator-vertical {
-        width: convert-to-rem(1px);
-        height: convert-to-rem(28px);
-        background-color: var(--color-white);
-        border-radius: convert-to-rem(32px);
-        margin-left: convert-to-rem(50px);
-        margin-right: convert-to-rem(50px);
-
-        @include mobile {
-            display: none;
-        }
-    }
-
     &__socials {
-        display: flex;
-        align-items: center;
-        gap: convert-to-rem(13px);
+        display: none; // Just in case, or remove entirely. 
+        // Better to remove content to keep clean.
     }
 
-    &__social-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.3s ease;
-
-        &:hover {
-            opacity: 0.7;
-        }
-    }
-
-    &__social-icon {
-        width: convert-to-rem(30px);
-        height: convert-to-rem(30px);
-        object-fit: contain;
-    }
 
     &__separator-horizontal {
         width: min(100%, convert-to-rem(898px));

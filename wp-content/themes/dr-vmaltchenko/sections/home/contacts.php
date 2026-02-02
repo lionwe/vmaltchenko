@@ -91,42 +91,68 @@ $schedule_rows = get_field('schedule_list', 'option');
                                     </div>
                                 <?php endif; ?>
 
-                                <?php if ($address): 
+                                <?php if ($address):
                                     $address_text = strip_tags($address);
                                     $map_link = 'https://www.google.com/maps/search/?api=1&query=' . urlencode($address_text);
-                                ?>
+                                    ?>
                                     <div class="contacts__item">
                                         <div class="contacts__item-icon">
                                             <?php if ($address_icon): ?>
                                                 <img src="<?php echo esc_url($address_icon['url']); ?>" alt="Address">
                                             <?php endif; ?>
                                         </div>
-                                        <a href="<?php echo esc_url($map_link); ?>" target="_blank" class="contacts__item-text">
+                                        <a href="<?php echo esc_url($map_link); ?>" target="_blank"
+                                            class="contacts__item-text">
                                             <?php echo wp_kses_post($address); ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
                             </div>
 
-                            <!-- Col 2: Schedule -->
-                            <?php if ($schedule_rows): ?>
-                                <div class="contacts__schedule">
-                                    <div class="contacts__schedule-inner">
-                                        <div class="contacts__schedule-icon">
-                                            <?php if ($schedule_icon): ?>
-                                                <img src="<?php echo esc_url($schedule_icon['url']); ?>" alt="Clock">
-                                            <?php endif; ?>
-                                        </div>
-                                        <div class="contacts__schedule-list">
-                                            <?php foreach ($schedule_rows as $row): ?>
-                                                <div class="contacts__schedule-row">
-                                                    <?php echo esc_html($row['text']); ?>
-                                                </div>
-                                            <?php endforeach; ?>
+                            <!-- Col 2: Schedule & Socials -->
+                            <div class="contacts__meta">
+                                <?php if ($schedule_rows): ?>
+                                    <div class="contacts__schedule">
+                                        <div class="contacts__schedule-inner">
+                                            <div class="contacts__schedule-icon">
+                                                <?php if ($schedule_icon): ?>
+                                                    <img src="<?php echo esc_url($schedule_icon['url']); ?>" alt="Clock">
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="contacts__schedule-list">
+                                                <?php foreach ($schedule_rows as $row): ?>
+                                                    <div class="contacts__schedule-row">
+                                                        <?php echo esc_html($row['text']); ?>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
                                         </div>
                                     </div>
+                                <?php endif; ?>
+
+                                <!-- Socials -->
+                                <div class="contacts__socials">
+                                    <?php
+                                    $social_networks = ['facebook', 'instagram', 'tiktok', 'telegram', 'youtube'];
+                                    foreach ($social_networks as $network):
+                                        $link = get_field('social_' . $network, 'option');
+                                        $icon = get_field('social_' . $network . '_icon', 'option');
+
+                                        if ($link && $icon): ?>
+                                            <a href="<?php echo esc_url($link); ?>" class="contacts__social-link"
+                                                target="_blank" rel="noopener noreferrer">
+                                                <div class="contacts__social-icon">
+                                                    <?php echo get_picture([
+                                                        'src' => $icon['url'],
+                                                        'alt' => ucfirst($network),
+                                                        'lazy' => true
+                                                    ]); ?>
+                                                </div>
+                                            </a>
+                                        <?php endif;
+                                    endforeach; ?>
                                 </div>
-                            <?php endif; ?>
+                            </div>
                         </div>
                     </div>
                 </div>

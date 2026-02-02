@@ -1,22 +1,13 @@
 [
     {
         "key": "group_site_options",
-        "title": "Глобальні налаштування",
+        "title": "Site Options",
         "fields": [
             {
                 "key": "field_tab_contacts",
                 "label": "Контакти",
                 "name": "",
-                "aria-label": "",
                 "type": "tab",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": false,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
                 "placement": "top",
                 "endpoint": 0
             },
@@ -24,31 +15,23 @@
                 "key": "field_phone_1",
                 "label": "Номер телефону (Основний)",
                 "name": "phone_1",
-                "aria-label": "",
                 "type": "text",
                 "instructions": "Відображається в шапці та футері",
                 "required": 0,
-                "conditional_logic": false,
                 "wrapper": {
                     "width": "50",
                     "class": "",
                     "id": ""
                 },
-                "default_value": "+38 (099) 000 00 00",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
+                "default_value": "+38 (099) 000 00 00"
             },
             {
                 "key": "field_phone_main_icon",
-                "label": "Іконка телефону (SVG)",
+                "label": "Іконка телефону",
                 "name": "phone_main_icon",
-                "aria-label": "",
                 "type": "image",
-                "instructions": "",
+                "instructions": "SVG іконка телефону",
                 "required": 0,
-                "conditional_logic": false,
                 "wrapper": {
                     "width": "50",
                     "class": "",
@@ -57,42 +40,28 @@
                 "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
                 "mime_types": "svg"
             },
             {
                 "key": "field_email_main",
                 "label": "Email",
                 "name": "email_main",
-                "aria-label": "",
                 "type": "email",
-                "instructions": "",
-                "required": false,
-                "conditional_logic": false,
+                "instructions": "Електронна пошта",
+                "required": 0,
                 "wrapper": {
                     "width": "50",
                     "class": "",
                     "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
+                }
             },
             {
                 "key": "field_email_main_icon",
-                "label": "Іконка Email (SVG)",
+                "label": "Іконка Email",
                 "name": "email_main_icon",
-                "aria-label": "",
                 "type": "image",
-                "instructions": "",
+                "instructions": "SVG іконка email",
                 "required": 0,
-                "conditional_logic": false,
                 "wrapper": {
                     "width": "50",
                     "class": "",
@@ -101,73 +70,36 @@
                 "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
                 "mime_types": "svg"
             },
             {
                 "key": "field_address_main",
                 "label": "Адреса",
                 "name": "address_main",
-                "aria-label": "",
                 "type": "textarea",
                 "instructions": "Можна використовувати br для переносу рядка",
                 "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
                 "default_value": "м. Ужгород, вул. Перемоги, 1",
-                "maxlength": "",
                 "rows": 3,
-                "placeholder": "",
                 "new_lines": "br"
             },
             {
                 "key": "field_address_main_icon",
-                "label": "Іконка Адреси (SVG)",
+                "label": "Іконка адреси",
                 "name": "address_main_icon",
-                "aria-label": "",
                 "type": "image",
-                "instructions": "",
+                "instructions": "SVG іконка адреси",
                 "required": 0,
-                "conditional_logic": false,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
                 "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
                 "mime_types": "svg"
             },
             {
                 "key": "field_tab_socials",
                 "label": "Соцмережі",
                 "name": "",
-                "aria-label": "",
                 "type": "tab",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": false,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
                 "placement": "top",
                 "endpoint": 0
             },
@@ -175,28 +107,22 @@
                 "key": "field_social_facebook",
                 "label": "Facebook",
                 "name": "social_facebook",
-                "aria-label": "",
                 "type": "url",
-                "instructions": "",
-                "required": false,
-                "conditional_logic": false,
+                "instructions": "Посилання на Facebook сторінку",
+                "required": 0,
                 "wrapper": {
                     "width": "50",
                     "class": "",
                     "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
+                }
             },
             {
                 "key": "field_social_facebook_icon",
-                "label": "Іконка Facebook (SVG)",
+                "label": "Іконка Facebook",
                 "name": "social_facebook_icon",
-                "aria-label": "",
                 "type": "image",
-                "instructions": "",
+                "instructions": "SVG іконка Facebook",
                 "required": 0,
-                "conditional_logic": false,
                 "wrapper": {
                     "width": "50",
                     "class": "",
@@ -205,40 +131,28 @@
                 "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
                 "mime_types": "svg"
             },
             {
                 "key": "field_social_instagram",
                 "label": "Instagram",
                 "name": "social_instagram",
-                "aria-label": "",
                 "type": "url",
-                "instructions": "",
-                "required": false,
-                "conditional_logic": false,
+                "instructions": "Посилання на Instagram профіль",
+                "required": 0,
                 "wrapper": {
                     "width": "50",
                     "class": "",
                     "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
+                }
             },
             {
                 "key": "field_social_instagram_icon",
-                "label": "Іконка Instagram (SVG)",
+                "label": "Іконка Instagram",
                 "name": "social_instagram_icon",
-                "aria-label": "",
                 "type": "image",
-                "instructions": "",
+                "instructions": "SVG іконка Instagram",
                 "required": 0,
-                "conditional_logic": false,
                 "wrapper": {
                     "width": "50",
                     "class": "",
@@ -247,40 +161,28 @@
                 "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
                 "mime_types": "svg"
             },
             {
                 "key": "field_social_tiktok",
                 "label": "TikTok",
                 "name": "social_tiktok",
-                "aria-label": "",
                 "type": "url",
-                "instructions": "",
-                "required": false,
-                "conditional_logic": false,
+                "instructions": "Посилання на TikTok профіль",
+                "required": 0,
                 "wrapper": {
                     "width": "50",
                     "class": "",
                     "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
+                }
             },
             {
                 "key": "field_social_tiktok_icon",
-                "label": "Іконка TikTok (SVG)",
+                "label": "Іконка TikTok",
                 "name": "social_tiktok_icon",
-                "aria-label": "",
                 "type": "image",
-                "instructions": "",
+                "instructions": "SVG іконка TikTok",
                 "required": 0,
-                "conditional_logic": false,
                 "wrapper": {
                     "width": "50",
                     "class": "",
@@ -289,40 +191,28 @@
                 "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
                 "mime_types": "svg"
             },
             {
                 "key": "field_social_telegram",
                 "label": "Telegram",
                 "name": "social_telegram",
-                "aria-label": "",
                 "type": "url",
-                "instructions": "",
-                "required": false,
-                "conditional_logic": false,
+                "instructions": "Посилання на Telegram канал/чат",
+                "required": 0,
                 "wrapper": {
                     "width": "50",
                     "class": "",
                     "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
+                }
             },
             {
                 "key": "field_social_telegram_icon",
-                "label": "Іконка Telegram (SVG)",
+                "label": "Іконка Telegram",
                 "name": "social_telegram_icon",
-                "aria-label": "",
                 "type": "image",
-                "instructions": "",
+                "instructions": "SVG іконка Telegram",
                 "required": 0,
-                "conditional_logic": false,
                 "wrapper": {
                     "width": "50",
                     "class": "",
@@ -331,40 +221,28 @@
                 "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
                 "mime_types": "svg"
             },
             {
                 "key": "field_social_youtube",
                 "label": "YouTube",
                 "name": "social_youtube",
-                "aria-label": "",
                 "type": "url",
-                "instructions": "",
-                "required": false,
-                "conditional_logic": false,
+                "instructions": "Посилання на YouTube канал",
+                "required": 0,
                 "wrapper": {
                     "width": "50",
                     "class": "",
                     "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
+                }
             },
             {
                 "key": "field_social_youtube_icon",
-                "label": "Іконка YouTube (SVG)",
+                "label": "Іконка YouTube",
                 "name": "social_youtube_icon",
-                "aria-label": "",
                 "type": "image",
-                "instructions": "",
+                "instructions": "SVG іконка YouTube",
                 "required": 0,
-                "conditional_logic": false,
                 "wrapper": {
                     "width": "50",
                     "class": "",
@@ -373,28 +251,13 @@
                 "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
                 "mime_types": "svg"
             },
             {
                 "key": "field_tab_schedule",
                 "label": "Графік роботи",
                 "name": "",
-                "aria-label": "",
                 "type": "tab",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": false,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
                 "placement": "top",
                 "endpoint": 0
             },
@@ -402,85 +265,42 @@
                 "key": "field_schedule_list",
                 "label": "Рядки графіку",
                 "name": "schedule_list",
-                "aria-label": "",
                 "type": "repeater",
-                "instructions": "",
-                "required": false,
-                "conditional_logic": false,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
+                "instructions": "Додайте рядки з графіком роботи",
+                "required": 0,
                 "layout": "table",
                 "button_label": "Додати рядок",
                 "min": 0,
                 "max": 0,
-                "rows_per_page": 20,
-                "collapsed": "",
                 "sub_fields": [
                     {
                         "key": "field_schedule_text",
                         "label": "Текст",
                         "name": "text",
-                        "aria-label": "",
                         "type": "text",
-                        "instructions": "",
-                        "required": false,
-                        "conditional_logic": false,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "Пн - 9:00 - 17:00",
-                        "maxlength": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "parent_repeater": "field_schedule_list"
+                        "instructions": "Наприклад: Пн - 9:00 - 17:00",
+                        "required": 0,
+                        "default_value": "Пн - 9:00 - 17:00"
                     }
                 ]
             },
             {
                 "key": "field_schedule_icon",
-                "label": "Іконка графіку (SVG)",
+                "label": "Іконка графіку",
                 "name": "schedule_icon",
-                "aria-label": "",
                 "type": "image",
                 "instructions": "SVG іконка для блоку графіку роботи",
                 "required": 0,
-                "conditional_logic": false,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
                 "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
                 "mime_types": "svg"
             },
             {
                 "key": "field_tab_footer",
                 "label": "Футер",
                 "name": "",
-                "aria-label": "",
                 "type": "tab",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": false,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
                 "placement": "top",
                 "endpoint": 0
             },
@@ -488,11 +308,9 @@
                 "key": "field_privacy_policy_page",
                 "label": "Сторінка Privacy Policy",
                 "name": "privacy_policy_page",
-                "aria-label": "",
                 "type": "post_object",
-                "instructions": "",
-                "required": false,
-                "conditional_logic": false,
+                "instructions": "Оберіть сторінку політики конфіденційності",
+                "required": 0,
                 "wrapper": {
                     "width": "50",
                     "class": "",
@@ -503,20 +321,16 @@
                 ],
                 "return_format": "id",
                 "ui": 1,
-                "taxonomy": [],
                 "allow_null": 0,
-                "multiple": 0,
-                "bidirectional_target": []
+                "multiple": 0
             },
             {
                 "key": "field_developer_credit",
-                "label": "Розробка (Made by...)",
+                "label": "Розробка",
                 "name": "developer_credit",
-                "aria-label": "",
                 "type": "group",
-                "instructions": "",
-                "required": false,
-                "conditional_logic": false,
+                "instructions": "Інформація про розробника сайту",
+                "required": 0,
                 "wrapper": {
                     "width": "50",
                     "class": "",
@@ -528,38 +342,29 @@
                         "key": "field_dev_text",
                         "label": "Текст",
                         "name": "text",
-                        "aria-label": "",
                         "type": "text",
-                        "instructions": "",
-                        "required": false,
-                        "conditional_logic": false,
+                        "instructions": "Наприклад: Made by Recipe",
+                        "required": 0,
                         "wrapper": {
                             "width": "50",
                             "class": "",
                             "id": ""
                         },
-                        "default_value": "Made by Recipe",
-                        "maxlength": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": ""
+                        "default_value": "Made by Recipe"
                     },
                     {
                         "key": "field_dev_link",
                         "label": "Посилання",
                         "name": "link",
-                        "aria-label": "",
                         "type": "url",
-                        "instructions": "",
-                        "required": false,
-                        "conditional_logic": false,
+                        "instructions": "URL сайту розробника",
+                        "required": 0,
                         "wrapper": {
                             "width": "50",
                             "class": "",
                             "id": ""
                         },
-                        "default_value": "https://recipe.com.ua",
-                        "placeholder": ""
+                        "default_value": "https://recipe.com.ua"
                     }
                 ]
             }

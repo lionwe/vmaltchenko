@@ -19,29 +19,6 @@
                     ?>
                 </ul>
             </nav>
-
-            <div class="page-footer__separator-vertical"></div>
-
-            <div class="page-footer__socials">
-                <?php
-                $social_networks = ['facebook', 'instagram', 'tiktok', 'telegram', 'youtube'];
-                foreach ($social_networks as $network):
-                    $link = get_field('social_' . $network, 'option');
-                    $icon = get_field('social_' . $network . '_icon', 'option');
-
-                    if ($link && $icon): ?>
-                        <a href="<?php echo esc_url($link); ?>" class="page-footer__social-link" target="_blank"
-                            rel="noopener noreferrer">
-                            <?php get_picture([
-                                'src' => $icon['url'],
-                                'alt' => ucfirst($network),
-                                'class' => 'page-footer__social-icon',
-                                'lazy' => true
-                            ]); ?>
-                        </a>
-                    <?php endif;
-                endforeach; ?>
-            </div>
         </div>
 
         <div class="page-footer__separator-horizontal"></div>

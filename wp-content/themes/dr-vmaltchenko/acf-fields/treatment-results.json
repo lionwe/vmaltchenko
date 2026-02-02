@@ -1,41 +1,24 @@
 [
     {
         "key": "group_treatment_results",
-        "title": "Результати лікування",
+        "title": "Home - Treatment Results",
         "fields": [
             {
                 "key": "field_treatment_results_badge",
-                "label": "Бейдж",
+                "label": "Бейджик",
                 "name": "treatment_results_badge",
                 "type": "text",
-                "instructions": "",
+                "instructions": "Текст бейджика над заголовком",
                 "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "Результати",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
+                "default_value": "Результати"
             },
             {
                 "key": "field_treatment_results_title",
                 "label": "Заголовок і опис",
                 "name": "treatment_results_title",
                 "type": "wysiwyg",
-                "instructions": "Введіть заголовок (H2) і опис (P)",
+                "instructions": "Введіть заголовок (H2) та опис",
                 "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
                 "tabs": "all",
                 "toolbar": "full",
                 "media_upload": 0,
@@ -46,19 +29,11 @@
                 "label": "Слайдер результатів",
                 "name": "treatment_results_list",
                 "type": "repeater",
-                "instructions": "",
+                "instructions": "Додайте слайди з результатами лікування",
                 "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
                 "layout": "block",
-                "pagination": 0,
                 "min": 0,
                 "max": 0,
-                "collapsed": "",
                 "button_label": "Додати слайд",
                 "sub_fields": [
                     {
@@ -66,15 +41,8 @@
                         "label": "Опис картки",
                         "name": "description",
                         "type": "wysiwyg",
-                        "instructions": "",
+                        "instructions": "Опис результату лікування",
                         "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
                         "tabs": "all",
                         "toolbar": "basic",
                         "media_upload": 0,
@@ -85,24 +53,11 @@
                         "label": "Зображення",
                         "name": "image",
                         "type": "image",
-                        "instructions": "",
+                        "instructions": "Фото до/після лікування",
                         "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
                         "return_format": "array",
                         "preview_size": "medium",
-                        "library": "all",
-                        "min_width": "",
-                        "min_height": "",
-                        "min_size": "",
-                        "max_width": "",
-                        "max_height": "",
-                        "max_size": "",
-                        "mime_types": ""
+                        "library": "all"
                     }
                 ]
             }
@@ -112,7 +67,7 @@
                 {
                     "param": "page_template",
                     "operator": "==",
-                    "value": "pages/home.php"
+                    "value": "templates/home.php"
                 }
             ]
         ],

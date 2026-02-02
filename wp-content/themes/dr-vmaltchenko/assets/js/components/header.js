@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const header = document.querySelector('.header');
 
-    let lastScrollTop = 0;
+    let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollThreshold = 100;
 
     // Hide/Show Header on Scroll
@@ -33,6 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Initial check in case page is reloaded while scrolled
+    // Disable transition to prevent "jumping" effect
+    header.style.transition = 'none';
+    handleScroll();
+    // Force reflow to flush styles
+    void header.offsetHeight;
+    header.style.transition = '';
 
     // Intersection Observer для активних пунктів меню
     const observerOptions = {

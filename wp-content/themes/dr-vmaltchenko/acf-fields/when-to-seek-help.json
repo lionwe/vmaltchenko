@@ -1,26 +1,16 @@
 [
     {
         "key": "group_when_to_seek_help",
-        "title": "Коли варто звернутись",
+        "title": "Home - When To Seek Help",
         "fields": [
             {
                 "key": "field_wtsh_badge",
                 "label": "Бейджик",
                 "name": "badge",
                 "type": "text",
-                "instructions": "Введіть текст для бейджика (маленький надпис зверху)",
+                "instructions": "Текст бейджика над заголовком",
                 "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
+                "default_value": ""
             },
             {
                 "key": "field_wtsh_title",
@@ -29,17 +19,7 @@
                 "type": "text",
                 "instructions": "Основний заголовок секції",
                 "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
+                "default_value": ""
             },
             {
                 "key": "field_wtsh_cards",
@@ -48,13 +28,6 @@
                 "type": "repeater",
                 "instructions": "Додайте до 9 карток з описом симптомів",
                 "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "collapsed": "",
                 "min": 0,
                 "max": 9,
                 "layout": "row",
@@ -65,15 +38,8 @@
                         "label": "Вміст картки",
                         "name": "card_content",
                         "type": "wysiwyg",
-                        "instructions": "Введіть заголовок (H3) та опис. Використовуйте редактор для форматування.",
+                        "instructions": "Введіть заголовок (H3) та опис",
                         "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
                         "tabs": "all",
                         "toolbar": "full",
                         "media_upload": 0,
@@ -86,15 +52,8 @@
                 "label": "Нижній опис",
                 "name": "bottom_description",
                 "type": "wysiwyg",
-                "instructions": "Текст після карток",
+                "instructions": "Текстовий блок після карток",
                 "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
                 "tabs": "all",
                 "toolbar": "full",
                 "media_upload": 1,

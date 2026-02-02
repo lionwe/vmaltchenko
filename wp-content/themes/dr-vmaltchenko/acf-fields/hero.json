@@ -1,36 +1,44 @@
 [
     {
         "key": "group_hero",
-        "title": "Hero",
+        "title": "Home - Hero",
         "fields": [
             {
                 "key": "field_hero_tab_main",
                 "label": "Основне",
                 "name": "",
-                "type": "tab"
+                "type": "tab",
+                "placement": "top",
+                "endpoint": 0
             },
             {
                 "key": "field_hero_background",
                 "label": "Фонове зображення",
                 "name": "hero_background",
                 "type": "image",
+                "instructions": "Оберіть зображення у форматі WebP",
+                "required": 0,
                 "return_format": "url",
                 "preview_size": "medium",
-                "library": "all",
-                "instructions": "Оберіть зображення у форматі WebP"
+                "library": "all"
             },
             {
                 "key": "field_hero_badges",
                 "label": "Бейджики",
                 "name": "hero_badges",
                 "type": "repeater",
+                "instructions": "Додайте бейджики для Hero секції",
+                "required": 0,
                 "layout": "table",
+                "button_label": "Додати бейджик",
                 "sub_fields": [
                     {
                         "key": "field_hero_badge_text",
                         "label": "Текст",
                         "name": "text",
-                        "type": "text"
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0
                     }
                 ]
             },
@@ -39,6 +47,8 @@
                 "label": "Контент",
                 "name": "hero_content",
                 "type": "wysiwyg",
+                "instructions": "Заголовок (H1) та опис",
+                "required": 0,
                 "tabs": "all",
                 "toolbar": "full",
                 "media_upload": 0
@@ -47,39 +57,48 @@
                 "key": "field_hero_tab_patients",
                 "label": "Пацієнти",
                 "name": "",
-                "type": "tab"
+                "type": "tab",
+                "placement": "top",
+                "endpoint": 0
             },
             {
                 "key": "field_hero_patients_avatars",
                 "label": "Аватарки пацієнтів",
                 "name": "hero_patients_avatars",
                 "type": "image",
+                "instructions": "Оберіть зображення у форматі WebP",
+                "required": 0,
                 "return_format": "url",
                 "preview_size": "medium",
-                "instructions": "Оберіть зображення у форматі WebP"
+                "library": "all"
             },
             {
                 "key": "field_hero_patients_text",
                 "label": "Текст пацієнтів",
                 "name": "hero_patients_text",
                 "type": "text",
-                "default_value": "+ 100 задоволених пацієнтів",
-                "instructions": "Наприклад: + 100 задоволених пацієнтів"
+                "instructions": "Наприклад: + 100 задоволених пацієнтів",
+                "required": 0,
+                "default_value": "+ 100 задоволених пацієнтів"
             },
             {
                 "key": "field_hero_tab_doctor",
                 "label": "Лікар",
                 "name": "",
-                "type": "tab"
+                "type": "tab",
+                "placement": "top",
+                "endpoint": 0
             },
             {
                 "key": "field_hero_doctor_image",
                 "label": "Зображення лікаря",
                 "name": "hero_doctor_image",
                 "type": "image",
+                "instructions": "Оберіть зображення у форматі WebP",
+                "required": 0,
                 "return_format": "url",
                 "preview_size": "medium",
-                "instructions": "Оберіть зображення у форматі WebP"
+                "library": "all"
             }
         ],
         "location": [
@@ -90,6 +109,14 @@
                     "value": "templates/home.php"
                 }
             ]
-        ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
     }
 ]
