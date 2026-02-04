@@ -35,6 +35,24 @@ function theme_setup()
 }
 
 // ============================================
+// Custom Nav Menu Classes (BEM Support)
+// ============================================
+add_filter('nav_menu_css_class', function ($classes, $item, $args) {
+    if (isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
+    }
+    return $classes;
+}, 10, 3);
+
+add_filter('nav_menu_link_attributes', function ($atts, $item, $args) {
+    if (isset($args->add_a_class)) {
+        $existing = isset($atts['class']) ? $atts['class'] . ' ' : '';
+        $atts['class'] = $existing . $args->add_a_class;
+    }
+    return $atts;
+}, 10, 3);
+
+// ============================================
 // ACF Options Page
 // ============================================
 add_action('acf/init', function () {

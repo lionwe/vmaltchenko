@@ -123,23 +123,12 @@
         display: block;
         width: fit-content;
         height: auto;
-        padding-top: convert-to-rem(13.5px);
-        padding-bottom: convert-to-rem(13.5px);
+        padding: convert-to-rem(13.5px) convert-to-rem(11px);
         border-radius: convert-to-rem(10px);
         background: rgba(205, 205, 205, 0.3);
         text-decoration: none;
         transition: background-color 0.3s ease, color 0.3s ease;
         white-space: nowrap;
-
-        &--wide {
-            padding-left: convert-to-rem(10.5px);
-            padding-right: convert-to-rem(10.5px);
-        }
-
-        &--narrow {
-            padding-left: convert-to-rem(12px);
-            padding-right: convert-to-rem(12px);
-        }
 
         @include typography($font-family-Inter, $fw-regular, 11px, 1);
         color: var(--color-black);

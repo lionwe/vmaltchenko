@@ -28,28 +28,19 @@
 			<div class="header__menu-container">
 				<nav class="header__nav">
 					<?php
-					$menu_items = [
-						'#about' => 'Про мене',
-						'#services' => 'Послуги',
-						'#when-to-visit' => 'Коли варто звернутись',
-						'#methods' => 'Методи лікування',
-						'#results' => 'Результати',
-						'#faq' => 'Відповіді на питання',
-					];
+					wp_nav_menu([
+						'theme_location' => 'menu-header',
+						'container' => false,
+						'menu_class' => 'header__menu',
+						'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+						'fallback_cb' => false,
+						'depth' => 1,
+						'link_before' => '',
+						'link_after' => '',
+						'add_li_class' => 'header__menu-item',
+						'add_a_class' => 'header__menu-link',
+					]);
 					?>
-					<ul class="header__menu">
-						<?php foreach ($menu_items as $link => $label):
-							$len = mb_strlen($label);
-							$padding_class = ($len < 12) ? 'header__menu-link--wide' : 'header__menu-link--narrow';
-							?>
-							<li class="header__menu-item">
-								<a href="<?php echo esc_url($link); ?>"
-									class="header__menu-link <?php echo $padding_class; ?>">
-									<?php echo esc_html($label); ?>
-								</a>
-							</li>
-						<?php endforeach; ?>
-					</ul>
 				</nav>
 			</div>
 
@@ -101,15 +92,18 @@
 				<div class="container">
 					<nav class="mobile-popup__nav">
 						<h2 id="mobile-menu-title" class="visually-hidden">Головне меню</h2>
-						<ul class="mobile-popup__list">
-								<?php foreach ($menu_items as $link => $label): ?>
-								<li class="mobile-popup__item">
-									<a href="<?php echo esc_url($link); ?>" class="mobile-popup__link">
-											<?php echo esc_html($label); ?>
-									</a>
-								</li>
-								<?php endforeach; ?>
-						</ul>
+						<?php
+						wp_nav_menu([
+							'theme_location' => 'menu-header',
+							'container' => false,
+							'menu_class' => 'mobile-popup__list',
+							'items_wrap' => '<ul class="%2$s">%3$s</ul>',
+							'fallback_cb' => false,
+							'depth' => 1,
+							'add_li_class' => 'mobile-popup__item',
+							'add_a_class' => 'mobile-popup__link',
+						]);
+						?>
 					</nav>
 
 					<div class="mobile-popup__cta">
