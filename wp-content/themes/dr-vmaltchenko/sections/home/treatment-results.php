@@ -50,16 +50,10 @@ $button_args = [
                 <div class="swiper-wrapper">
                     <?php if ($results): ?>
                         <?php foreach ($results as $item):
-                            $card_description = $item['description'];
                             $image = $item['image'];
                             ?>
                             <div class="swiper-slide">
                                 <div class="treatment-results__card">
-                                    <?php if ($card_description): ?>
-                                        <div class="treatment-results__card-description">
-                                            <?php echo $card_description; ?>
-                                        </div>
-                                    <?php endif; ?>
 
                                     <?php if ($image): ?>
                                         <div class="treatment-results__card-image">
