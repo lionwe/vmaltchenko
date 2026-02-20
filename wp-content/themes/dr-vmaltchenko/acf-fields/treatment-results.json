@@ -37,18 +37,6 @@
                 "button_label": "Додати слайд",
                 "sub_fields": [
                     {
-                        "key": "field_treatment_results_card_description",
-                        "label": "Опис картки",
-                        "name": "description",
-                        "type": "wysiwyg",
-                        "instructions": "Опис результату лікування",
-                        "required": 0,
-                        "tabs": "all",
-                        "toolbar": "basic",
-                        "media_upload": 0,
-                        "delay": 0
-                    },
-                    {
                         "key": "field_treatment_results_card_image",
                         "label": "Зображення",
                         "name": "image",
