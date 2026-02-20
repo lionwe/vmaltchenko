@@ -55,10 +55,14 @@ $patients_text = get_field('hero_patients_text') ?: '+ 100 задоволени�
 						$part1 = $parts[0] ?? '';
 						$part2 = $parts[1] ?? '';
 
+						// Single visually hidden H1 for SEO
+						echo '<h1 class="screen-reader-text" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">' . esc_html($h1_text) . '</h1>';
+						
+						// Visual parts changed to divs and hidden from screen readers
 						echo '<div class="hero__content-grid">';
-						echo '<h1 class="hero__title-part hero__title-part--1">' . esc_html($part1) . '</h1>';
+						echo '<div class="hero__title-part hero__title-part--1" aria-hidden="true">' . esc_html($part1) . '</div>';
 						echo '<div class="hero__desc">' . $description . '</div>';
-						echo '<h1 class="hero__title-part hero__title-part--2">' . esc_html($part2) . '</h1>';
+						echo '<div class="hero__title-part hero__title-part--2" aria-hidden="true">' . esc_html($part2) . '</div>';
 						echo '</div>';
 					} else {
 						echo $content;
